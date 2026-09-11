@@ -28,7 +28,17 @@ class ReportIntegrityTests(unittest.TestCase):
             "E8": "validation_e8_problem_last",
             "E9": "validation_e9_pca_rbf",
         }
-        self.assertEqual(set(rows), set(directories))
+        mechanism_results = {
+            "E11a": HERE.parent
+            / "aimo_e11a_rrb_multiview"
+            / "result"
+            / "stage_a_result.json",
+            "E12": HERE.parent
+            / "aimo_e12_metacognitive_readout"
+            / "result"
+            / "stage_a_result.json",
+        }
+        self.assertEqual(set(rows), set(directories) | set(mechanism_results))
         for experiment, directory in directories.items():
             result = read_json(VALIDATION / directory / "validation_result.json")
             metrics = result["metrics"]
@@ -41,6 +51,18 @@ class ReportIntegrityTests(unittest.TestCase):
                 f'{metrics["ordinary_accuracy"]:.6f}',
             )
             self.assertEqual(rows[experiment]["gate_passed"], str(result["gate"]["passed"]))
+        for experiment, path in mechanism_results.items():
+            result = read_json(path)
+            metrics = result["metrics"]
+            self.assertEqual(
+                rows[experiment]["grouped_oof_balanced_accuracy"],
+                f'{metrics["candidate_balanced_accuracy"]:.6f}',
+            )
+            self.assertEqual(
+                rows[experiment]["grouped_oof_accuracy"],
+                f'{metrics["candidate_ordinary_accuracy"]:.6f}',
+            )
+            self.assertEqual(rows[experiment]["gate_passed"], str(result["passed"]))
 
     def test_reports_contain_core_frozen_claims(self) -> None:
         v6 = read_json(VALIDATION / "validation_e2_layer_vote" / "validation_result.json")
@@ -51,6 +73,9 @@ class ReportIntegrityTests(unittest.TestCase):
             f'{e10["accuracy"]:.2f}',
             f'{e10["best_constant_accuracy"]:.2f}',
             "predicted every",
+            "0.6273",
+            "0.6363",
+            "0.771",
         ]
         for filename in ["TECHNICAL_REPORT_DRAFT.md", "TECHNICAL_REPORT_2PAGE_DRAFT.md"]:
             text = (HERE / filename).read_text(encoding="utf-8")

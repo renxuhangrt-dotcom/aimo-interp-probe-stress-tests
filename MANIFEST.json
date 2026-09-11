@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "release": "aimo-interp-probe-stress-tests-v0.1.0",
+  "release": "aimo-interp-probe-stress-tests-v0.2.0",
   "author": "XUHANG REN",
-  "file_count": 92,
+  "file_count": 113,
   "files": [
     {
       "path": ".gitattributes",
@@ -16,8 +16,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 470,
-      "sha256": "3071731D2D878633B6183FDD51BDA7964A385AB60F928BC58007834B87BFC8E6"
+      "bytes": 427,
+      "sha256": "5F83174D4C253EA82FA9C473FC1CF9F0A07A5A1C4B85F42657F15925056D3B30"
     },
     {
       "path": "LICENSE",
@@ -33,6 +33,116 @@
       "path": "outputs/aimo-small-v6-fixed-layer-vote-20260910.zip",
       "bytes": 4225167,
       "sha256": "C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/aimo_e11a_rrb_multiview.ipynb",
+      "bytes": 76817,
+      "sha256": "D88F8744030485D8829B7013C40B7FD39F03A16ECD85D3722085C73B2F00DDF7"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/BUILD_REPORT.md",
+      "bytes": 2074,
+      "sha256": "EF77042946045C8A003FA4DA300109AC6B201AC74C347538A887241A28A7A391"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/E11_PREREGISTRATION.md",
+      "bytes": 4722,
+      "sha256": "E0BA60E6DE43A2A0C8FCD5DA1A341853761F2B785F7766CB90D19F1C6665136D"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/kaggle_e11_rrb_multiview.py",
+      "bytes": 60363,
+      "sha256": "4EEC2CB96EE038C9F41534855145CB9E395FFBB7341B5F6864710EE3451570C6"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/README.md",
+      "bytes": 1001,
+      "sha256": "DEC1C97E824BA58A5AA879FB4EF1230CF8381AF8C04C62DDA8BA61CFF076456E"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/result/experiment_result.json",
+      "bytes": 5355,
+      "sha256": "593744DA77CC2A6B02DA2F07525E85A2A51B1814B758F190B83437C4E48385BD"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/result/run_manifest.json",
+      "bytes": 4356,
+      "sha256": "24F01394719EA54F8E23697C5E3017E10C234A2030CB46D088C974667E628E16"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/result/STAGE_A_REPORT.md",
+      "bytes": 1260,
+      "sha256": "480FB3C4EB00EE57493543FC543EB5C6F9D2182D898FF2AE8ED446758B33A3A9"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/result/stage_a_result.json",
+      "bytes": 4763,
+      "sha256": "2DEA73EA11E63B87AB529B9414CD6FE47B7481AD15FFA5441EDEC6B8D264559B"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/RESULT_ANALYSIS.md",
+      "bytes": 2317,
+      "sha256": "1F49E66FD534C85A75EA61138A0BB69E29E62B894E2894E7CE7201DA25F232B7"
+    },
+    {
+      "path": "outputs/aimo_e11a_rrb_multiview/test_e11_rrb_multiview.py",
+      "bytes": 6689,
+      "sha256": "FFEF2451D5C217F9EDEFF3CEB7E2FACEE87C5BAF0E29EE29F223726CCF39F11A"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/aimo_e12_metacognitive_readout.ipynb",
+      "bytes": 96999,
+      "sha256": "D1D22C1CA7D0FEC317D00732E72DB98A4ED47557D92351D36F88F816A0E4CB95"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/BUILD_REPORT.md",
+      "bytes": 2065,
+      "sha256": "E05F4C4DF7CCF4141462AA080CD76B28700A50FCE4F1BC965B6DD2059AC1F57B"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/E12_PREREGISTRATION.md",
+      "bytes": 4549,
+      "sha256": "3470AAC3564D42CC262233EA7E451B94622F7FA8A2601AEEE8BA2D017EA517BF"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/kaggle_e12_metacognitive_readout.py",
+      "bytes": 70867,
+      "sha256": "BEFF00CAC63E8580866F6E3619790711DE87C9E82D7AC3924AC2A0F4C92F57C6"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/README.md",
+      "bytes": 1028,
+      "sha256": "BB8FA9303672BBB7513293486BDD4FE8E270D718EAEBA41F4DF2E0A30EF7A0F5"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/result/experiment_result.json",
+      "bytes": 6107,
+      "sha256": "5E58AD4AF03A9FF152BA9DDC63FA16283518C1EF978242B78C11BE59D37E9929"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/result/run_manifest.json",
+      "bytes": 3949,
+      "sha256": "D73D9C8631BE9F39582521D3F779978AD262C0C3A237E2C1415FFDE7564432FC"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/result/STAGE_A_REPORT.md",
+      "bytes": 1780,
+      "sha256": "B43D3C5FD7FDAA69ED4367262A66A01EB02C21683FDAB211C9AFA942095EB300"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/result/stage_a_result.json",
+      "bytes": 5486,
+      "sha256": "9F50A6820FEC49083BD23F6D76ECEB77D8DC48825902E7F8F4A7B2451E9383F0"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/RESULT_ANALYSIS.md",
+      "bytes": 4141,
+      "sha256": "FDA12D0E5D0CD9E14764E1DF8EEF86DABD1DDC4DA93E5EE282959CB5402AD066"
+    },
+    {
+      "path": "outputs/aimo_e12_metacognitive_readout/test_e12_metacognitive_readout.py",
+      "bytes": 8919,
+      "sha256": "8EEDDC9CA3F8725C2F3C0D6B57653CF0BDEC33586724128BC4EE7C5CA74A1571"
     },
     {
       "path": "outputs/aimo_v6_gpu_ready/audit_public_cross_model_transfer.py",
@@ -351,8 +461,8 @@
     },
     {
       "path": "outputs/EXPERIMENT_LOG.md",
-      "bytes": 25754,
-      "sha256": "D8970AECED4D51731BF7B9AA8281B491E6FFAD42718F2BC810ECAE9B22FF24F5"
+      "bytes": 32540,
+      "sha256": "7323D258A54141A2E8AA170ACA2514DFABA7F790B15D3379C489701C2D66467D"
     },
     {
       "path": "outputs/OFFICIAL_DATA_AUDIT_AND_E10_PLAN.md",
@@ -361,13 +471,13 @@
     },
     {
       "path": "outputs/technical_report/build_report_assets.py",
-      "bytes": 12975,
-      "sha256": "18A52A0202DC24CC0240379FB6C252FF24C9F350339FC5007E5CA2CA32A09F42"
+      "bytes": 20256,
+      "sha256": "6F461B1678B3E01CD433CFE4EB5B96B6BA279B7F1DDA3592E73A3BD594BA3F0C"
     },
     {
       "path": "outputs/technical_report/build_two_page_pdf.py",
-      "bytes": 19606,
-      "sha256": "B7A78084F1829AAA5E23571AAE8D19FFB6455103E6A620524D0DCABCA4CB6AB2"
+      "bytes": 20465,
+      "sha256": "0084D6E5A8F1BDD92A9972BF9BAA490CAB5069E9286AC04F2C71B2C7A7DA31B1"
     },
     {
       "path": "outputs/technical_report/e10_summary.csv",
@@ -376,73 +486,68 @@
     },
     {
       "path": "outputs/technical_report/NEW_MODEL_GATE.md",
-      "bytes": 3122,
-      "sha256": "66CBF4F34EBC78C2A7FC9AE20A399BCAE2D647964EDA2E729002D427A7AF216A"
-    },
-    {
-      "path": "outputs/technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_draft.pdf",
-      "bytes": 63129,
-      "sha256": "CAF176BEA0C8856E73B600A4DA8DBF7CC7558E5AB5A79674E6543422BE7D72E3"
+      "bytes": 3538,
+      "sha256": "C18D5CC02A5684FD41CA5B17BAD887C1565EE9EEB074725F7485DF4D03159C25"
     },
     {
       "path": "outputs/technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_submission.pdf",
-      "bytes": 63736,
-      "sha256": "299E9AD0375136B40D1D22A4193F98AABB2BB8146478B196102B825D28580778"
+      "bytes": 47565,
+      "sha256": "7B949F9FBA05832E46CEFD004EE465FDEFB8DBB29C9579A08FCB02BC40851AB2"
     },
     {
       "path": "outputs/technical_report/reproducibility_manifest.json",
-      "bytes": 5092,
-      "sha256": "9110F3ACCACC5F9F845C761D71532E94F8F8127A63FDB8D6A0F12C984AD04467"
+      "bytes": 6230,
+      "sha256": "AD088146AB34DD7F9791BA283540CE744D345B1BE903634D3B3312760D5DFF9A"
     },
     {
       "path": "outputs/technical_report/results_overview.png",
-      "bytes": 44560,
-      "sha256": "B7F10CE3F5C7CACB6745EAE751837306E8E11E16E36BD81B2834740B898B7F22"
+      "bytes": 28795,
+      "sha256": "8E726411450F2F8C405B5BE887E3C4CEEDDC424EDBE9B4F33AA93C3246AC1DD1"
     },
     {
       "path": "outputs/technical_report/results_overview.svg",
-      "bytes": 5853,
-      "sha256": "3BDC819D712E3D5358A3D591D6D9847EE6EC268A44C6CF336D7C55353656F935"
+      "bytes": 6635,
+      "sha256": "3C58336612783E7AB43585EB0AF5FADA6CAC42EE1F31902602CEDD4993CECD52"
     },
     {
       "path": "outputs/technical_report/results_summary.csv",
-      "bytes": 898,
-      "sha256": "5D2F6D76AC39138A60E05E4E04448DE64D663115FC109E7FA32652492243FD7C"
+      "bytes": 1166,
+      "sha256": "5B70988080F0C563A1ACE6B7F2B6D1D702D56D308833B2CE519DCFE94DE9BFDF"
     },
     {
       "path": "outputs/technical_report/ROADMAP_ZH.md",
-      "bytes": 3092,
-      "sha256": "738C8D42ECA967CE5A4CC17D907C7EB3A03118548D489B5DA591276513B387FA"
+      "bytes": 3532,
+      "sha256": "4581C32C721D01FE63F6E6AB653F8958B7436657858158263DBC4687BB5ED407"
     },
     {
       "path": "outputs/technical_report/SUBMISSION_CHECKLIST.md",
-      "bytes": 1504,
-      "sha256": "7609672116BF95973691C1490911D6AF1B6F44E3CBFA2CFC976D8F447882BEB5"
+      "bytes": 1906,
+      "sha256": "4A4F1FDBC7A2C87C0CD9049264CD428021B4E62BE7248FD0BA691439BB2B9AA3"
     },
     {
       "path": "outputs/technical_report/TECHNICAL_REPORT_2PAGE_DRAFT.md",
-      "bytes": 6818,
-      "sha256": "7C2CA0DFC15557E80E2A67BEAA9802002D5B95B9B9EC4198ADC11377E5C4223F"
+      "bytes": 7613,
+      "sha256": "AB8F8184D108665A8015099EB05789B941CE89DA488E3D7E9D56C203668D01C8"
     },
     {
       "path": "outputs/technical_report/TECHNICAL_REPORT_DRAFT.md",
-      "bytes": 13946,
-      "sha256": "B55CF3ACF52EA2C614ED1312BD9D4FBEDAD99F11B9EFAD96E367CEC705988699"
+      "bytes": 15877,
+      "sha256": "813BEDF14135FC6E30F8C04E16F4C411704E9E0E80AFCF52B3A21549FDA4CB0D"
     },
     {
       "path": "outputs/technical_report/test_report_integrity.py",
-      "bytes": 3056,
-      "sha256": "3FBA2BFF4C8104E5DF1F3F1A9A1C3987A3F0B663DB3B7B4D015A44235E1C3B0E"
+      "bytes": 4020,
+      "sha256": "A3DEDEED48760CAECC6BF6FAA31CDE756FCA4254DB946F050C107463D48DCA53"
     },
     {
       "path": "README.md",
-      "bytes": 3132,
-      "sha256": "0F6FE70D5A0B49DDF81B0EB5720F98F307CE4672923DC0AC672B00CDED04F602"
+      "bytes": 3366,
+      "sha256": "6825BE3546CAA5885AD4AED4ADB7F72E5EE50768DC1AC36D2990E5E7FE4BE2D6"
     },
     {
       "path": "requirements-cpu.txt",
-      "bytes": 55,
-      "sha256": "5786C09E2A5EF867E636E17458ED04E7D06DA7C25395AC3C888EAE7878EFB656"
+      "bytes": 71,
+      "sha256": "CDDF72B6A9DCDFEF16152B3494B9D32AAF2879819D8FF624E3EC2A2F0F04DC9B"
     },
     {
       "path": "requirements-gpu.txt",
@@ -461,8 +566,8 @@
     },
     {
       "path": "VERIFICATION.md",
-      "bytes": 1095,
-      "sha256": "4ED4FCA0FF82D80A86CC6BA763C7144E951C1B7BBEA4F3EB5B631F1792C8ACD8"
+      "bytes": 1190,
+      "sha256": "7A7899A4197A87EB35D3EDBC553C7DA5BB2374121433CCF0C7237447C91D197F"
     }
   ]
 }

@@ -1,0 +1,235 @@
+{
+  "experiment": "E12_counterbalanced_metacognitive_readout",
+  "status": "FAIL_STAGE_A",
+  "stage_a": {
+    "stage": "A",
+    "passed": false,
+    "failures": [
+      "candidate BA 0.636276 < 0.724758",
+      "candidate bootstrap lower 0.540968 <= 0.616944",
+      "paired bootstrap improvement lower -0.174262 <= 0",
+      "source holdout hendrycks-math-test-reference-100 -> hendrycks-math-train-reference-500 0.530000 < 0.65",
+      "source holdout hendrycks-math-train-reference-500 -> hendrycks-math-test-reference-100 0.556541 < 0.65",
+      "mean source holdout 0.543271 < 0.69",
+      "random-control advantage 0.005913 < 0.10"
+    ],
+    "feature_names": [
+      "robustness_semantic_margin_layer_4",
+      "robustness_semantic_margin_layer_8",
+      "robustness_semantic_margin_layer_12",
+      "robustness_semantic_margin_layer_16",
+      "robustness_semantic_margin_layer_20",
+      "robustness_semantic_margin_layer_24",
+      "robustness_semantic_margin_layer_28",
+      "robustness_semantic_margin_layer_32",
+      "robustness_semantic_margin_layer_36",
+      "robustness_minus_correctness_layer_4",
+      "robustness_minus_correctness_layer_8",
+      "robustness_minus_correctness_layer_12",
+      "robustness_minus_correctness_layer_16",
+      "robustness_minus_correctness_layer_20",
+      "robustness_minus_correctness_layer_24",
+      "robustness_minus_correctness_layer_28",
+      "robustness_minus_correctness_layer_32",
+      "robustness_minus_correctness_layer_36"
+    ],
+    "fold_records": [
+      {
+        "seed": 42,
+        "fold": 0,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 42,
+        "fold": 1,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 42,
+        "fold": 2,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 42,
+        "fold": 3,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 42,
+        "fold": 4,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 43,
+        "fold": 0,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 43,
+        "fold": 1,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 43,
+        "fold": 2,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 43,
+        "fold": 3,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 43,
+        "fold": 4,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 44,
+        "fold": 0,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 44,
+        "fold": 1,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 44,
+        "fold": 2,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 44,
+        "fold": 3,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 44,
+        "fold": 4,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 45,
+        "fold": 0,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 45,
+        "fold": 1,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 45,
+        "fold": 2,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 45,
+        "fold": 3,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 45,
+        "fold": 4,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 46,
+        "fold": 0,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 46,
+        "fold": 1,
+        "train_count": 109,
+        "test_count": 28
+      },
+      {
+        "seed": 46,
+        "fold": 2,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 46,
+        "fold": 3,
+        "train_count": 110,
+        "test_count": 27
+      },
+      {
+        "seed": 46,
+        "fold": 4,
+        "train_count": 109,
+        "test_count": 28
+      }
+    ],
+    "metrics": {
+      "candidate_balanced_accuracy": 0.6362761276127613,
+      "candidate_ordinary_accuracy": 0.635036496350365,
+      "candidate_bootstrap_95_lower": 0.540968263962531,
+      "v6_frozen_oof_balanced_accuracy": 0.7047579757975797,
+      "paired_improvement_bootstrap_95_lower": -0.17426179846938777,
+      "source_holdout_balanced_accuracy": {
+        "hendrycks-math-test-reference-100 -> hendrycks-math-train-reference-500": 0.53,
+        "hendrycks-math-train-reference-500 -> hendrycks-math-test-reference-100": 0.5565410199556541
+      },
+      "mean_source_holdout_balanced_accuracy": 0.543270509977827,
+      "randomized_control_balanced_accuracy": 0.6303630363036303,
+      "randomized_control_advantage": 0.00591309130913098,
+      "disagreement_vs_v6": 0.27007299270072993,
+      "predicted_positive": 60,
+      "actual_positive": 36,
+      "confusion_tn_fp_fn_tp": [
+        64,
+        37,
+        13,
+        23
+      ],
+      "option_order_diagnostics": {
+        "robustness": {
+          "mean_absolute_margin_difference": 2.759150266647339,
+          "semantic_sign_agreement": 0.2871046228710462,
+          "pearson_correlation": 0.11756741977941283
+        },
+        "correctness": {
+          "mean_absolute_margin_difference": 3.7866451740264893,
+          "semantic_sign_agreement": 0.08353609083536091,
+          "pearson_correlation": -0.7706016937500715
+        }
+      }
+    },
+    "thresholds": {
+      "candidate_balanced_accuracy_min": 0.7247579757975797,
+      "candidate_bootstrap_lower_strictly_above": 0.6169437631511935,
+      "paired_improvement_lower_strictly_above": 0.0,
+      "source_holdout_each_min": 0.65,
+      "source_holdout_mean_min": 0.69,
+      "random_control_advantage_min": 0.1,
+      "disagreement_vs_v6_min": 0.08
+    }
+  },
+  "stage_b": null,
+  "submission_artifact_created": false
+}

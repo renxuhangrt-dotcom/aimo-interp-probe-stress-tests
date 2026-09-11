@@ -12,15 +12,23 @@
 - [x] Reproducibility manifest and figure source.
 - [x] Explicit negative-result and claim-boundary sections.
 - [x] New-model gate forbidding V6/E10 feedback tuning.
+- [x] Public repository created:
+  `https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests`.
+- [x] Apache-2.0-compatible release structure, LICENSE, notices, and initial
+  secret/archive tests.
+- [x] E11a and E12 preregistrations, fail-closed notebooks, and negative
+  Stage-A results frozen without consuming the AIME/RRB Stage-B source.
 
-## Required before public release
+## Required before final report submission
 
-- [ ] Confirm the organizer's final page limit/template; current website is the
-  operative source, while the earlier proposal describes a 1–2-page report.
-- [ ] Create a clean public repository and replace the code URL placeholder.
-- [ ] Add a LICENSE and verify compatibility with the official baseline's
-  Apache-2.0 license and model license.
-- [ ] Run secret, large-file, archive-layout, and fresh-environment tests.
+- [ ] Recheck the organizer website or announcement channel for a final report
+  template and page limit. As verified on 2026-09-11, the current website
+  specifies report details/open code and the Nov 1–15 submission window but no
+  template or page limit.
+- [ ] Sync E11a/E12 evidence and technical-report candidate v0.3 to the public
+  repository.
+- [ ] Re-run secret, large-file, archive-layout, link, and fresh-environment
+  tests on the refreshed release.
 - [ ] Re-run `build_report_assets.py` and freeze the final manifest.
 - [ ] Record final Small Track rank/score only after the competition closes;
   do not use it to tune the method.

@@ -1,6 +1,6 @@
 # Verification record
 
-Verified on 2026-09-11 before the v0.1.0 local release candidate.
+Verified on 2026-09-11 before the v0.2.0 local release candidate.
 
 With the pinned official CSV files present, the V6, problem-token, and
 E10 Kaggle extractor suites passed 16/16 tests, including all frozen
@@ -13,6 +13,7 @@ Inside the sanitized release without redistributed official data:
 - V6 Kaggle extractor: 5/5 runnable tests passed, 1 data-dependent hash test skipped;
 - problem-token extractor: 5/5 runnable tests passed, 1 data-dependent hash test skipped;
 - E10 extractor: 3/3 runnable tests passed, 1 data-dependent hash test skipped;
+- E11a and E12 sources, notebooks, preregistrations, and frozen Stage A results are included;
 - report integrity: 3/3 passed.
 
 Total release-local result: 22 passed, 3 explicitly skipped because the

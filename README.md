@@ -6,8 +6,8 @@ for Mathematical Reasoning**, by XUHANG REN (Independent Researcher).
 
 Public repository: https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests
 
-This local release candidate documents the AIMO Interpretability Challenge
-2026 Small Models Track V6 method and the E6–E10 negative-result sequence.
+This v0.2.0 release candidate documents the AIMO Interpretability Challenge
+2026 Small Models Track V6 method and the E6–E12 negative-result sequence.
 The scientific result is not that V6 is a generally reliable detector: V6
 reached 12/19 on the Small private evaluation but failed a pre-registered,
 ten-problem zero-overlap OOD audit at 0.20 accuracy versus an 0.80 constant
@@ -20,11 +20,15 @@ baseline.
 - `outputs/aimo_v6_gpu_ready/`: data audit, hidden-state extraction, V6 training
   and export, E6–E10 experiments, preregistrations, tests, and aggregate results.
 - `outputs/aimo_v6_kaggle/`: label-blind Kaggle extraction notebooks and sources.
+- `outputs/aimo_e11a_rrb_multiview/`: pre-registered multi-view drift probe and
+  its failed Stage A result.
+- `outputs/aimo_e12_metacognitive_readout/`: counterbalanced elicited-judgment
+  readout and its failed Stage A result.
 - `outputs/aimo-small-v6-fixed-layer-vote-20260910.zip`: exact 4.23 MB submitted V6 bundle.
 - `third_party/`: license and provenance notices for the official baseline.
 
 Large activation arrays, model weights, official dataset copies, private
-downloads, and individual E10 internals are intentionally not redistributed.
+downloads, and raw generation internals are intentionally not redistributed.
 
 ## Verify the report evidence
 

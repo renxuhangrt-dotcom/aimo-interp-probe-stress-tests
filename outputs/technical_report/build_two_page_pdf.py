@@ -118,7 +118,7 @@ def first_page(canvas, doc) -> None:
     canvas.saveState()
     canvas.setTitle("When Good Probes Fail")
     canvas.setAuthor("XUHANG REN")
-    canvas.setSubject("AIMO Interpretability Challenge 2026 technical report submission")
+    canvas.setSubject("AIMO Interpretability Challenge 2026 technical report candidate")
     canvas.setFillColor(colors.HexColor("#102a43"))
     canvas.setFont("Helvetica-Bold", 15.2)
     canvas.drawCentredString(PAGE_W / 2, PAGE_H - 34, "When Good Probes Fail")
@@ -139,7 +139,7 @@ def first_page(canvas, doc) -> None:
     canvas.drawCentredString(
         PAGE_W / 2,
         PAGE_H - 76,
-        "AIMO Interpretability Challenge 2026 - Small Models Track - submission v0.2",
+        "AIMO Interpretability Challenge 2026 - Small Models Track - candidate v0.3",
     )
     canvas.setStrokeColor(colors.HexColor("#a9bfd5"))
     canvas.setLineWidth(0.6)
@@ -166,7 +166,7 @@ def second_page(canvas, doc) -> None:
 def draw_footer(canvas, page_number: int) -> None:
     canvas.setFillColor(colors.HexColor("#64748b"))
     canvas.setFont("Helvetica", 6.8)
-    canvas.drawString(LEFT, 16, "Technical report submission v0.2 - evidence frozen 2026-09-10")
+    canvas.drawString(LEFT, 16, "Technical report candidate v0.3 - evidence frozen 2026-09-11")
     canvas.drawRightString(PAGE_W - RIGHT, 16, str(page_number))
 
 
@@ -178,6 +178,8 @@ def result_table() -> Table:
         ["E7", "Mean problem-token state", "0.7186", "Reject"],
         ["E8", "Final problem-token state", "0.6949", "Reject"],
         ["E9", "PCA10 + RBF vote", "0.7126", "Reject"],
+        ["E11a", "Multi-view latent drift", "0.6273", "Reject"],
+        ["E12", "Counterbalanced metacognition", "0.6363", "Reject"],
     ]
     table = Table(data, colWidths=[25, 125, 43, 64], repeatRows=1)
     table.setStyle(
@@ -216,8 +218,9 @@ def build_story() -> list:
                 "perturbations. Our V6 submission applies balanced linear probes to nine "
                 "fixed layers of DeepSeek-R1-0528-Qwen3-8B and aggregates 225 hard votes. "
                 "It achieved 0.705 grouped out-of-fold (OOF) balanced accuracy and 12/19 "
-                "Small Track private accuracy with a 4.23 MB bundle. Four pre-registered "
-                "variants produced only small or unstable in-distribution gains. A frozen "
+                "Small Track private accuracy with a 4.23 MB bundle. Four registered "
+                "refinements produced only small or unstable gains; two mechanism-changing "
+                "follow-ups performed near shuffled-label controls. A frozen "
                 "audit on ten non-overlapping AIMO problems then found that V6 predicted "
                 "every problem robust, scoring 0.20 accuracy against an 0.80 always-negative "
                 "baseline. Thus representation separability and a small private-set gain "
@@ -279,7 +282,10 @@ def build_story() -> list:
                 "E6-E9 each changed one component and were registered before evaluation. "
                 "Promotion required at least +0.02 balanced accuracy over V6, a positive paired "
                 "bootstrap lower bound, strong performance in each source direction, advantage "
-                "over shuffled labels, and nontrivial prediction disagreement."
+                "over shuffled labels, and nontrivial prediction disagreement. After E10, "
+                "E11a tested multi-view latent drift and E12 tested a counterbalanced "
+                "robustness/correctness logit readout; both were fail-closed before loading "
+                "the untouched AIME/RRB source."
             ),
             h("5", "Public and private results"),
             result_table(),
@@ -296,8 +302,10 @@ def build_story() -> list:
                 "balanced accuracy but asymmetric source transfer (0.612 vs 0.756). E8 weakened "
                 "aggregate and transfer evidence. E9 raised ordinary accuracy to 0.708, yet its "
                 "paired balanced-accuracy interval crossed zero and one source direction fell to "
-                "0.628. Accuracy and balanced accuracy must both be reported under the 101:36 "
-                "imbalance."
+                "0.628. E11a was only 0.0337 above its shuffled control. E12 was only 0.0059 "
+                "above its control; reversing A/B made correctness margins correlate at "
+                "-0.771, exposing answer-position bias. Accuracy and balanced accuracy must "
+                "both be reported under the 101:36 imbalance."
             ),
             NextPageTemplate("Second"),
             PageBreak(),
@@ -348,7 +356,8 @@ def build_story() -> list:
                 "measurements. <b>2.</b> Random-label controls are necessary but insufficient. "
                 "<b>3.</b> Small gains need paired evidence. <b>4.</b> Source-direction symmetry "
                 "is an early warning. <b>5.</b> Confidence under shift distinguishes a threshold "
-                "near-miss from extrapolation failure. <b>6.</b> Pre-registered stopping rules "
+                "near-miss from extrapolation failure. <b>6.</b> Counterbalance elicited "
+                "judgments to reveal position bias. <b>7.</b> Pre-registered stopping rules "
                 "turn tempting marginal gains into useful negative results."
             ),
         ]
@@ -363,10 +372,10 @@ def build_story() -> list:
                 "Training used 137 problems from two related MATH sources; private and OOD "
                 "samples contained only 19 and ten cases. E10 tests problem transfer for one 8B "
                 "checkpoint, not all models or perturbations. Linear separability does not show "
-                "that the model uses the probed features causally. Our defensible claim is "
-                "negative: final-token states contain in-distribution robustness signal, but "
-                "this probe family is not supported as a general detector of robust mathematical "
-                "reasoning."
+                "that the model uses the probed features causally. E11a/E12 failed before their "
+                "independent Stage B. Our defensible claim is negative: final-token states "
+                "contain in-distribution robustness signal, but neither this probe family nor "
+                "the tested elicited confidence generalizes as a detector of robust reasoning."
             ),
             h("9", "Reproducibility and resources"),
             p(
@@ -385,10 +394,10 @@ def build_story() -> list:
             ),
             h("10", "Conclusion"),
             p(
-                "An efficient hidden-state probe showed meaningful public and small-private-set "
-                "signal, but plausible refinements failed strict paired gates and the frozen "
-                "method collapsed on a new AIMO problem source. The gap between separability and "
-                "transfer is the main result."
+                "An efficient probe showed meaningful public and small-private-set signal, but "
+                "refinements failed strict gates, frozen V6 collapsed on a new AIMO source, and "
+                "two new mechanisms performed near randomized controls. The gap between "
+                "separability, elicited confidence, and transfer is the main result."
             ),
             h("", "References"),
             p(
@@ -439,7 +448,7 @@ def build() -> Path:
         bottomMargin=BOTTOM,
         title="When Good Probes Fail",
         author="XUHANG REN",
-        subject="AIMO Interpretability Challenge 2026 technical report draft",
+        subject="AIMO Interpretability Challenge 2026 technical report candidate",
     )
     document.addPageTemplates(
         [

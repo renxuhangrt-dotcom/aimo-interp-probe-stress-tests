@@ -380,3 +380,116 @@ Last updated: 2026-09-10 (Asia/Shanghai)
   deliverable is the technical report, with V6/E6-E10 as reproducible evidence;
   any new model version requires a genuinely new hypothesis and independent
   validation source.
+
+## Score-first workflow restored; E11 preregistered
+
+- The earlier plan to prioritize publication was superseded by the explicit
+  score-first directive. V6 remains the Small champion, and work continues
+  until genuinely different hypotheses cease to produce credible gains under
+  independent validation.
+- E11 tests a new mechanism rather than another threshold/layer/classifier
+  tweak: normalized hidden-state drift under three deterministic,
+  answer-preserving views of each problem.
+- E11's 18 features, classifier, seeds, grouped folds, V6 control, and all
+  promotion thresholds were frozen before external labels are generated.
+- Independent validation is pinned to the 30-problem AIME 2024 dataset and
+  three disjoint reversible transformations from Robust Reasoning Benchmark:
+  sentence reversal, word reversal, and within-word character reversal.
+- The Kaggle notebook enforces two stages. Stage A must beat V6 under the
+  preregistered in-distribution gates; otherwise it exits with a valid negative
+  result and spends no compute generating external labels. Only after Stage A
+  passes does it write and hash all external candidate/V6 predictions, then
+  generate the RRB robustness labels.
+- Local integration replay reproduced V6 OOF balanced accuracy exactly at
+  `0.7047579757975797` from the existing 137-problem activation archive.
+- Status: **PENDING KAGGLE RUN**. No V8 archive has been created.
+
+## E11 integrity failure; E11a control repair frozen
+
+- E11 completed model loading and all 668 label-blind multi-view forward
+  passes on Kaggle T4 x2. It stopped before printing any candidate metric or
+  generating any external robustness label.
+- Cause: freshly retraining the V6 control on the new activations produced OOF
+  balanced accuracy `0.676980198019802`, not the historical
+  `0.7047579757975797`. This is an activation/environment replay mismatch, not
+  an E11 scientific gate result.
+- E11a changes only the control implementation. Stage-A paired tests now use
+  the immutable historical V6 OOF vector. External controls use the actual
+  deployed 225-vote V6 artifact that scored 12/19, downloaded from public
+  repository commit `c87824100d0570078efb21f564ea885bd4acd017` and checked
+  against ZIP SHA-256
+  `C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E`.
+- The hypothesis, 18 features, candidate classifier, folds, seeds, thresholds,
+  RRB transformations, AIME data, and external label protocol are unchanged.
+  E11a uses a new cache namespace and remains pending. No V8 exists.
+
+## E11a controlled multi-view latent drift rejected
+
+- Returned result archive SHA-256:
+  `777235F7EFC03AC31165A9EF914E3CAABE921D9AD0849170F7429D843A136137`.
+- Every integrity check passed, including 668/668 feature jobs, the immutable
+  V6 OOF score `0.7047579758`, the deployed V6 ZIP/artifact hashes and 225-vote
+  schema, zero external training overlap, and all 90 RRB reversibility checks.
+- Candidate grouped OOF balanced accuracy was `0.6273377338`, well below both
+  V6 and the required `0.7247579758`. Its bootstrap lower bound was
+  `0.5344018333`; the paired improvement lower bound versus V6 was
+  `-0.1562518211`.
+- Source holdouts were `0.5900000000` and `0.7172949002` (mean
+  `0.6536474501`). The shuffled-label control scored `0.5936468647`, leaving
+  only `0.0336908691` candidate advantage.
+- Candidate/V6 disagreement was substantial at 25/137, but the candidate's
+  TN=65, FP=36, FN=14, TP=22 traded four additional true negatives for seven
+  lost true positives versus V6.
+- Decision: `FAIL_STAGE_A`. No external robustness labels were generated and
+  no submission archive was created. Threshold, C, layer, summary, or
+  per-view tuning on E11a is prohibited. V6 remains champion at 12/19.
+- The external AIME/RRB source remains untouched. The next eligible hypothesis
+  class is targeted metacognitive elicitation, not another distance summary or
+  generic representation/classifier variant.
+
+## E12 counterbalanced metacognitive readout preregistered
+
+- E12 instantiates the next eligible hypothesis class. It reads layerwise A/B
+  semantic preferences after explicitly asking the pinned target model to
+  forecast either paraphrase stability or first-attempt mathematical
+  correctness; it does not reuse E11a distance features.
+- Each diagnostic is counterbalanced by reversing the A/B assignments. Margins
+  are sign-corrected before averaging, and the fixed candidate representation
+  consists of nine robustness margins plus nine
+  robustness-minus-correctness margins.
+- Stage A performs 548 forward passes on only the official 137 rows. The AIME
+  2024 dataset, deployed V6 external artifact, external representations, and
+  all external label generation are programmatically deferred until Stage A
+  passes.
+- Classifier, folds, seeds, threshold, and all promotion gates remain frozen at
+  their preregistered values. Passing both stages authorizes a separate Small
+  submission build; it does not automatically create one.
+- Local verification: 12/12 unit and integrity tests passed. Status:
+  **READY FOR KAGGLE; NO E12 RESULT OBSERVED**.
+
+## E12 counterbalanced metacognitive readout rejected
+
+- Returned archive SHA-256:
+  `9FA60E9377F57EC62895965FB798BDC98DBAF14132286692A18544890C1F733C`.
+  All archive, model-revision, public-data, hardware, tokenizer, and 548/548
+  extraction integrity checks passed.
+- Candidate grouped OOF balanced accuracy was `0.6362761276` and ordinary
+  accuracy was 87/137. Its bootstrap lower bound was `0.5409682640`; the paired
+  improvement lower bound versus V6 was `-0.1742617985`.
+- Source holdouts were `0.5300000000` and `0.5565410200` (mean
+  `0.5432705100`). The shuffled-label control scored `0.6303630363`, leaving
+  only `0.0059130913` candidate advantage.
+- Counterbalancing exposed strong option-position dependence. After semantic
+  sign correction, robustness-order agreement was only `0.287105`; correctness
+  agreement was `0.083536` with correlation `-0.770602` across reversed A/B
+  assignments.
+- E12 disagreed with V6 on 27.0% of public rows but scored three fewer correct
+  decisions. Its TN=64, FP=37, FN=13, TP=23 traded three additional true
+  negatives for six lost true positives relative to frozen V6.
+- Decision: `FAIL_STAGE_A`. AIME 2024, the deployed external V6 artifact, and
+  RRB label generation were never loaded or executed. No submission artifact
+  was created, and E12 prompt/token/layer/classifier tuning is prohibited.
+- The accumulated V3–V7 and E6–E12 evidence now satisfies the agreed technical-
+  bottleneck stopping condition for the current Small optimization program.
+  V6 remains champion at 12/19; work pivots to report consolidation unless a
+  genuinely new information source or causal experimental capability appears.

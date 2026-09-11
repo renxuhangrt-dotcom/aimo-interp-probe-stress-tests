@@ -21,6 +21,19 @@ EXPERIMENTS = [
     ("E9", "validation_e9_pca_rbf", "Final prompt token + PCA-RBF vote"),
 ]
 
+MECHANISM_EXPERIMENTS = [
+    (
+        "E11a",
+        OUTPUTS / "aimo_e11a_rrb_multiview" / "result" / "stage_a_result.json",
+        "Multi-view latent drift + linear probe",
+    ),
+    (
+        "E12",
+        OUTPUTS / "aimo_e12_metacognitive_readout" / "result" / "stage_a_result.json",
+        "Counterbalanced metacognitive logit readout",
+    ),
+]
+
 
 def read_json(path: Path) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
@@ -65,6 +78,30 @@ def load_rows() -> tuple[list[dict[str, object]], dict]:
                 "randomized_control_advantage": metrics["randomized_control_advantage"],
                 "disagreement_vs_v6": metrics.get("disagreement_vs_v6"),
                 "gate_passed": bool(result["gate"]["passed"]),
+            }
+        )
+    v6_score = float(rows[0]["grouped_oof_balanced_accuracy"])
+    for label, path, method in MECHANISM_EXPERIMENTS:
+        result = read_json(path)
+        metrics = result["metrics"]
+        holdouts = list(metrics["source_holdout_balanced_accuracy"].values())
+        if len(holdouts) != 2:
+            raise ValueError(f"{label} must have exactly two source holdouts")
+        rows.append(
+            {
+                "experiment": label,
+                "method": method,
+                "grouped_oof_balanced_accuracy": metrics["candidate_balanced_accuracy"],
+                "grouped_oof_accuracy": metrics["candidate_ordinary_accuracy"],
+                "delta_balanced_accuracy_vs_v6": metrics["candidate_balanced_accuracy"]
+                - v6_score,
+                "bootstrap_95_lower": metrics["candidate_bootstrap_95_lower"],
+                "source_holdout_a_balanced_accuracy": holdouts[0],
+                "source_holdout_b_balanced_accuracy": holdouts[1],
+                "source_holdout_mean_balanced_accuracy": sum(holdouts) / len(holdouts),
+                "randomized_control_advantage": metrics["randomized_control_advantage"],
+                "disagreement_vs_v6": metrics["disagreement_vs_v6"],
+                "gate_passed": bool(result["passed"]),
             }
         )
     e10 = read_json(VALIDATION / "validation_e10_ood_small" / "validation_result.json")
@@ -134,7 +171,7 @@ def write_figure(rows: list[dict[str, object]], e10: dict) -> None:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="white"/>',
         '<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.title{font-size:18px;font-weight:700}.panel{font-size:15px;font-weight:700}.tick{font-size:11px;fill:#475569}.label{font-size:12px}.note{font-size:11px;fill:#475569}.value{font-size:11px;font-weight:700}</style>',
-        '<text x="560" y="27" text-anchor="middle" class="title">Small in-distribution gains did not transfer to a new problem source</text>',
+        '<text x="560" y="27" text-anchor="middle" class="title">Small public gains and new readouts did not establish transfer</text>',
     ]
 
     # Panel A: grouped public balanced accuracy.
@@ -242,6 +279,108 @@ def write_figure(rows: list[dict[str, object]], e10: dict) -> None:
     (HERE / "results_overview.svg").write_text("\n".join(svg) + "\n", encoding="utf-8")
 
 
+def write_png(rows: list[dict[str, object]], e10: dict) -> None:
+    """Render the same evidence overview as a sharp PNG for ReportLab."""
+    from PIL import Image, ImageDraw, ImageFont
+
+    width, height = 1120, 470
+    image = Image.new("RGB", (width, height), "white")
+    draw = ImageDraw.Draw(image)
+    regular_path = Path(r"C:\Windows\Fonts\arial.ttf")
+    bold_path = Path(r"C:\Windows\Fonts\arialbd.ttf")
+    if not regular_path.is_file() or not bold_path.is_file():
+        raise FileNotFoundError("Arial fonts are required for deterministic report rendering")
+    fonts = {
+        "title": ImageFont.truetype(str(bold_path), 18),
+        "panel": ImageFont.truetype(str(bold_path), 15),
+        "tick": ImageFont.truetype(str(regular_path), 11),
+        "label": ImageFont.truetype(str(regular_path), 12),
+        "note": ImageFont.truetype(str(regular_path), 11),
+        "value": ImageFont.truetype(str(bold_path), 11),
+    }
+    ink = "#111827"
+    muted = "#475569"
+
+    def centered(x: float, y: float, text: str, font, fill=ink) -> None:
+        box = draw.textbbox((0, 0), text, font=font)
+        draw.text((x - (box[2] - box[0]) / 2, y), text, font=font, fill=fill)
+
+    centered(width / 2, 10, "Small public gains and new readouts did not establish transfer", fonts["title"])
+
+    left, top, plot_w, plot_h = 70, 80, 500, 300
+    ymin, ymax = 0.55, 0.76
+
+    def y_a(value: float) -> float:
+        return top + plot_h * (ymax - value) / (ymax - ymin)
+
+    draw.text((70, 43), "A. Grouped public validation", font=fonts["panel"], fill=ink)
+    for tick in [0.55, 0.60, 0.65, 0.70, 0.75]:
+        y = y_a(tick)
+        draw.line((left, y, left + plot_w, y), fill="#e2e8f0", width=1)
+        label = f"{tick:.2f}"
+        box = draw.textbbox((0, 0), label, font=fonts["tick"])
+        draw.text((left - 10 - (box[2] - box[0]), y - 6), label, font=fonts["tick"], fill=muted)
+    draw.line((left, top, left, top + plot_h), fill="#64748b", width=1)
+    draw.line((left, top + plot_h, left + plot_w, top + plot_h), fill="#64748b", width=1)
+    bar_w = 48
+    gap = plot_w / len(rows)
+    for index, row in enumerate(rows):
+        x = left + gap * (index + 0.5)
+        score = float(row["grouped_oof_balanced_accuracy"])
+        lower = float(row["bootstrap_95_lower"])
+        y_score = y_a(score)
+        y_base = y_a(ymin)
+        y_lower = y_a(lower)
+        color = "#2563eb" if index == 0 else "#94a3b8"
+        draw.rectangle((x - bar_w / 2, y_score, x + bar_w / 2, y_base), fill=color)
+        draw.line((x, y_score, x, y_lower), fill=ink, width=2)
+        draw.line((x - 7, y_lower, x + 7, y_lower), fill=ink, width=2)
+        centered(x, y_score - 18, f"{score:.3f}", fonts["value"])
+        centered(x, top + plot_h + 6, str(row["experiment"]), fonts["label"])
+    v6_score = float(rows[0]["grouped_oof_balanced_accuracy"])
+    for value, color, label in [
+        (v6_score, "#2563eb", "V6"),
+        (v6_score + 0.02, "#dc2626", "promotion gate"),
+    ]:
+        y = y_a(value)
+        for x in range(left, left + plot_w, 10):
+            draw.line((x, y, min(x + 6, left + plot_w), y), fill=color, width=1)
+        box = draw.textbbox((0, 0), label, font=fonts["note"])
+        draw.text((left + plot_w - 4 - (box[2] - box[0]), y - 15), label, font=fonts["note"], fill=color)
+    draw.text((75, 420), "Vertical marks end at one-sided 95% bootstrap lower bounds.", font=fonts["note"], fill=muted)
+
+    left_b, plot_w_b = 670, 380
+    draw.text((left_b, 43), f"B. Independent OOD audit (n={int(e10['cases'])})", font=fonts["panel"], fill=ink)
+
+    def y_b(value: float) -> float:
+        return top + plot_h * (1.0 - value)
+
+    for tick in [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]:
+        y = y_b(tick)
+        draw.line((left_b, y, left_b + plot_w_b, y), fill="#e2e8f0", width=1)
+        label = f"{tick:.1f}"
+        box = draw.textbbox((0, 0), label, font=fonts["tick"])
+        draw.text((left_b - 10 - (box[2] - box[0]), y - 6), label, font=fonts["tick"], fill=muted)
+    draw.line((left_b, top, left_b, top + plot_h), fill="#64748b", width=1)
+    draw.line((left_b, top + plot_h, left_b + plot_w_b, top + plot_h), fill="#64748b", width=1)
+    values = [float(e10["accuracy"]), float(e10["best_constant_accuracy"])]
+    names = ["Frozen V6", "Always negative"]
+    colors_b = ["#2563eb", "#f59e0b"]
+    centers = [left_b + 115, left_b + 280]
+    for x, value, name, color in zip(centers, values, names, colors_b, strict=True):
+        y = y_b(value)
+        draw.rectangle((x - 42, y, x + 42, top + plot_h), fill=color)
+        centered(x, y - 20, f"{value:.2f}", fonts["value"])
+        centered(x, top + plot_h + 6, name, fonts["label"])
+    lower, upper = [float(value) for value in e10["wilson_95"]]
+    x = centers[0]
+    draw.line((x, y_b(upper), x, y_b(lower)), fill=ink, width=2)
+    draw.line((x - 7, y_b(upper), x + 7, y_b(upper)), fill=ink, width=2)
+    draw.line((x - 7, y_b(lower), x + 7, y_b(lower)), fill=ink, width=2)
+    centered(left_b + plot_w_b / 2, 62, "V6 predicted all 10 cases robust", fonts["note"], "#991b1b")
+    image.save(HERE / "results_overview.png", format="PNG", optimize=True)
+
+
 def write_manifest() -> None:
     paths = [
         OUTPUTS / "aimo-small-v6-fixed-layer-vote-20260910.zip",
@@ -252,6 +391,12 @@ def write_manifest() -> None:
         VALIDATION / "E8_PREREGISTRATION.md",
         VALIDATION / "E9_PREREGISTRATION.md",
         VALIDATION / "E10_PREREGISTRATION.md",
+        OUTPUTS / "aimo_e11a_rrb_multiview" / "E11_PREREGISTRATION.md",
+        OUTPUTS / "aimo_e11a_rrb_multiview" / "result" / "stage_a_result.json",
+        OUTPUTS / "aimo_e11a_rrb_multiview" / "RESULT_ANALYSIS.md",
+        OUTPUTS / "aimo_e12_metacognitive_readout" / "E12_PREREGISTRATION.md",
+        OUTPUTS / "aimo_e12_metacognitive_readout" / "result" / "stage_a_result.json",
+        OUTPUTS / "aimo_e12_metacognitive_readout" / "RESULT_ANALYSIS.md",
     ]
     for _, directory, _ in EXPERIMENTS:
         paths.append(VALIDATION / directory / "validation_result.json")
@@ -294,6 +439,7 @@ def main() -> int:
     rows, e10 = load_rows()
     write_table(rows, e10)
     write_figure(rows, e10)
+    write_png(rows, e10)
     write_manifest()
     print(f"Wrote report assets to {HERE}")
     return 0

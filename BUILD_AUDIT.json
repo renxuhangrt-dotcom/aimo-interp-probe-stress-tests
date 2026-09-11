@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "release": "aimo-interp-probe-stress-tests-v0.1.0",
+  "release": "aimo-interp-probe-stress-tests-v0.2.0",
   "license_status": "APACHE-2.0",
   "checks": {
-    "text_files_scanned": 87,
-    "python_files_compiled": 26,
-    "notebook_code_cells_compiled": 4,
+    "text_files_scanned": 109,
+    "python_files_compiled": 30,
+    "notebook_code_cells_compiled": 6,
     "secret_or_personal_path_findings": [],
     "v6_archive_hash_verified": true
   }

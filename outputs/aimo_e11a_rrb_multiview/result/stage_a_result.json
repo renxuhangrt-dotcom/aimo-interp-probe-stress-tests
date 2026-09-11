@@ -1,0 +1,216 @@
+{
+  "stage": "A",
+  "passed": false,
+  "failures": [
+    "candidate BA 0.627338 < 0.724758",
+    "candidate bootstrap lower 0.534402 <= 0.616944",
+    "paired bootstrap improvement lower -0.156252 <= 0",
+    "source holdout hendrycks-math-test-reference-100 -> hendrycks-math-train-reference-500 0.590000 < 0.65",
+    "mean source holdout 0.653647 < 0.69",
+    "random-control advantage 0.033691 < 0.10"
+  ],
+  "feature_names": [
+    "flatten_cosine_mean",
+    "flatten_cosine_late_mean",
+    "flatten_cosine_max",
+    "flatten_relative_l2_mean",
+    "flatten_relative_l2_late_mean",
+    "flatten_relative_l2_max",
+    "irrelevant_cosine_mean",
+    "irrelevant_cosine_late_mean",
+    "irrelevant_cosine_max",
+    "irrelevant_relative_l2_mean",
+    "irrelevant_relative_l2_late_mean",
+    "irrelevant_relative_l2_max",
+    "copied_wrapper_cosine_mean",
+    "copied_wrapper_cosine_late_mean",
+    "copied_wrapper_cosine_max",
+    "copied_wrapper_relative_l2_mean",
+    "copied_wrapper_relative_l2_late_mean",
+    "copied_wrapper_relative_l2_max"
+  ],
+  "fold_records": [
+    {
+      "seed": 42,
+      "fold": 0,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 42,
+      "fold": 1,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 43,
+      "fold": 0,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 43,
+      "fold": 1,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 43,
+      "fold": 2,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 43,
+      "fold": 3,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 43,
+      "fold": 4,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 44,
+      "fold": 0,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 44,
+      "fold": 1,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 44,
+      "fold": 2,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 44,
+      "fold": 3,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 44,
+      "fold": 4,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 45,
+      "fold": 0,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 45,
+      "fold": 1,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 45,
+      "fold": 2,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 45,
+      "fold": 3,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 45,
+      "fold": 4,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 46,
+      "fold": 0,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 46,
+      "fold": 1,
+      "train_count": 109,
+      "test_count": 28
+    },
+    {
+      "seed": 46,
+      "fold": 2,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 46,
+      "fold": 3,
+      "train_count": 110,
+      "test_count": 27
+    },
+    {
+      "seed": 46,
+      "fold": 4,
+      "train_count": 109,
+      "test_count": 28
+    }
+  ],
+  "metrics": {
+    "candidate_balanced_accuracy": 0.6273377337733774,
+    "candidate_ordinary_accuracy": 0.635036496350365,
+    "candidate_bootstrap_95_lower": 0.5344018332857619,
+    "v6_frozen_oof_balanced_accuracy": 0.7047579757975797,
+    "paired_improvement_bootstrap_95_lower": -0.1562518210955711,
+    "source_holdout_balanced_accuracy": {
+      "hendrycks-math-test-reference-100 -> hendrycks-math-train-reference-500": 0.59,
+      "hendrycks-math-train-reference-500 -> hendrycks-math-test-reference-100": 0.7172949002217295
+    },
+    "mean_source_holdout_balanced_accuracy": 0.6536474501108647,
+    "randomized_control_balanced_accuracy": 0.5936468646864687,
+    "randomized_control_advantage": 0.03369086908690877,
+    "disagreement_vs_v6": 0.18248175182481752,
+    "predicted_positive": 58,
+    "actual_positive": 36,
+    "confusion_tn_fp_fn_tp": [
+      65,
+      36,
+      14,
+      22
+    ]
+  },
+  "thresholds": {
+    "candidate_balanced_accuracy_min": 0.7247579757975797,
+    "candidate_bootstrap_lower_strictly_above": 0.6169437631511935,
+    "paired_improvement_lower_strictly_above": 0.0,
+    "source_holdout_each_min": 0.65,
+    "source_holdout_mean_min": 0.69,
+    "random_control_advantage_min": 0.1,
+    "disagreement_vs_v6_min": 0.08
+  }
+}

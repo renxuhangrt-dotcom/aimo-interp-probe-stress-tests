@@ -11,8 +11,9 @@ reasoning model remains correct under meaning-preserving perturbations. Our V6
 submission applies balanced linear probes to nine fixed layers of
 `DeepSeek-R1-0528-Qwen3-8B` and aggregates 225 hard votes. It achieved 0.705
 grouped out-of-fold (OOF) balanced accuracy and 12/19 Small Track private
-accuracy with a 4.23 MB bundle. Four pre-registered variants produced only
-small or unstable in-distribution gains. A frozen audit on ten non-overlapping
+accuracy with a 4.23 MB bundle. Four registered refinements produced only
+small or unstable in-distribution gains; two mechanism-changing follow-ups
+then performed near shuffled-label controls. A frozen audit on ten non-overlapping
 AIMO problems then found that V6 predicted every problem robust, scoring 0.20
 accuracy against an 0.80 always-negative baseline. Thus representation
 separability and a small private-set improvement did not establish
@@ -43,6 +44,10 @@ We therefore pre-registered E6–E9 before evaluation. Promotion required a
 strong performance in each source direction, advantage over shuffled labels,
 and nontrivial prediction disagreement.
 
+After E10, E11a tested multi-view hidden-state drift and E12 tested a direct
+robustness/correctness readout with reversed A/B assignments. Both were
+fail-closed before loading the untouched AIME/RRB source.
+
 ![Public and independent OOD results](results_overview.svg)
 
 | Exp. | Change from V6 | OOF BA | OOF acc. | Source BA | Decision |
@@ -52,6 +57,8 @@ and nontrivial prediction disagreement.
 | E7 | Mean problem-token state | **0.7186** | 0.6642 | .612 / .756 | Reject |
 | E8 | Final problem-token state | 0.6949 | 0.6423 | .658 / .662 | Reject |
 | E9 | PCA10 + RBF votes | 0.7126 | **0.7080** | .628 / .768 | Reject |
+| E11a | Multi-view latent drift | 0.6273 | 0.6350 | .590 / .717 | Reject |
+| E12 | Counterbalanced metacognition | 0.6363 | 0.6350 | .530 / .557 | Reject |
 
 V6 reached 12/19 private accuracy with full coverage and no invalid outputs,
 the first non-constant private improvement in our submission sequence. Yet no
@@ -59,8 +66,11 @@ successor passed its frozen gate. E6 changed only 2/137 decisions. E7 exposed
 the strongest public signal but severe source-direction asymmetry. E8 weakened
 both aggregate and transfer evidence. E9 improved ordinary accuracy—the
 competition metric—but its paired balanced-accuracy interval crossed zero and
-one source direction fell below threshold. Reporting both accuracy and balanced
-accuracy was essential under the 101:36 class imbalance.
+one source direction fell below threshold. E11a was only 0.0337 above its
+shuffled control. E12 was only 0.0059 above its control, and reversing A/B made
+correctness margins correlate at −0.771, exposing position rather than semantic
+judgment. Reporting both accuracy and balanced accuracy was essential under the
+101:36 class imbalance.
 
 ## Independent audit and negative result
 
@@ -82,20 +92,22 @@ not create V8.
 
 ## Lessons and limitations
 
-Three lessons follow. First, split at the causal unit: expanded perturbations
+Four lessons follow. First, split at the causal unit: expanded perturbations
 of one problem are repeated measurements, not independent data. Second,
 randomized-label controls are necessary but insufficient; all candidates beat
 their controls while V6 still failed OOD. Third, source symmetry, paired tests,
 confidence under shift, and pre-registered stopping rules can prevent marginal
-validation gains from becoming leaderboard overfitting.
+validation gains from becoming leaderboard overfitting. Fourth, counterbalance
+elicited judgments: a semantic-looking self-report may actually encode answer
+position.
 
 The claim boundary is important. Training used 137 problems from two related
 MATH sources; private and OOD samples contained only 19 and ten cases. E10 tests
 problem transfer for one 8B checkpoint, not all models or perturbations. Probes
 are correlational and do not establish causal mechanisms [3,4]. Our defensible
 conclusion is that final-token states contain in-distribution robustness signal,
-but this probe family is not supported as a general detector of robust
-mathematical reasoning.
+but neither this probe family nor the tested elicited confidence is supported as
+a general detector of robust mathematical reasoning.
 
 All inputs, preregistrations, artifacts, and result JSONs are hash-pinned.
 Activation extraction used free Kaggle T4×2 sessions; training, bootstrap,

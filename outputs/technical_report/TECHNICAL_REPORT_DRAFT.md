@@ -1,7 +1,7 @@
 # When Good Probes Fail: Pre-registered Stress Tests of an Efficient Hidden-State Robustness Predictor for Mathematical Reasoning
 
 **AIMO Interpretability Challenge 2026 — Small Models Track**  
-**Working technical-report draft, version 0.1 (2026-09-10)**  
+**Technical-report candidate, version 0.3 (2026-09-11)**
 **Author:** XUHANG REN · **Affiliation:** Independent Researcher  
 **Contact:** renxuhang2020@qq.com  
 **Code:** https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests
@@ -17,9 +17,11 @@ at nine fixed layers and aggregates 225 hard votes. V6 reached 0.705 grouped
 out-of-fold balanced accuracy and 12/19 accuracy on the Small Track private
 evaluation, improving over our constant and earlier probe submissions while
 requiring only a single model forward pass per problem and a 4.23 MB submission
-bundle. Four pre-registered variants—layer deltas, mean problem-token states,
-final problem-token states, and PCA-RBF probes—failed strict paired promotion
-gates despite several small in-distribution improvements. Most importantly, a
+bundle. Four pre-registered representation/classifier variants failed strict
+paired promotion gates despite several small in-distribution improvements.
+Two mechanism-changing follow-ups—multi-view latent drift and counterbalanced
+metacognitive readout—then performed near their shuffled-label controls and
+failed before independent labels were touched. Most importantly, a
 frozen independent audit on ten non-overlapping AIMO problems found that V6
 predicted every case robust, scoring 0.20 accuracy against an 0.80 always-negative
 baseline. The result shows that probe separability and even a small private-set
@@ -102,6 +104,14 @@ control; and at least 0.08 prediction disagreement from V6. These gates were
 intended to prevent leaderboard-driven or negligible changes from becoming new
 submissions.
 
+After the independent E10 audit, E11a and E12 tested two genuinely different
+mechanisms under the same fail-closed Stage-A gates. E11a measured hidden-state
+drift under three answer-preserving prompt views. E12 directly read layerwise
+preferences between robustness/correctness descriptions while reversing A/B
+assignments to expose option-position bias. Both notebooks were programmed to
+stop before loading the untouched AIME/RRB source unless every public gate
+passed.
+
 ## 5. Results: useful signal, no validated successor
 
 ![Summary of public and OOD results](results_overview.svg)
@@ -113,6 +123,8 @@ submissions.
 | E7 | Mean problem-token state, linear votes | **0.7186** | 0.6642 | +0.0139 | 0.6117 / 0.7561 | +0.1983 | Reject |
 | E8 | Final problem-token state, linear votes | 0.6949 | 0.6423 | −0.0099 | 0.6583 / 0.6619 | +0.1170 | Reject |
 | E9 | Final prompt token, PCA10 + RBF votes | 0.7126 | **0.7080** | +0.0078 | 0.6283 / 0.7683 | +0.1210 | Reject |
+| E11a | Multi-view latent drift | 0.6273 | 0.6350 | −0.0774 | 0.5900 / 0.7173 | +0.0337 | Reject at Stage A |
+| E12 | Counterbalanced metacognitive readout | 0.6363 | 0.6350 | −0.0685 | 0.5300 / 0.5565 | +0.0059 | Reject at Stage A |
 
 V6's public confusion counts were TN=61, FP=40, FN=7, and TP=29. Its bootstrap
 95% lower bound was 0.6169, and it exceeded the shuffled-label control by
@@ -137,6 +149,14 @@ The rejected experiments are scientifically informative:
   to 0.6283. This exposes a real metric tension under the 101:36 imbalance:
   competition accuracy and class-balanced diagnostic quality need to be
   reported together rather than silently substituted for one another.
+- **E11a—multi-view drift:** The candidate disagreed with V6 on 25/137 rows,
+  but its 0.6273 balanced accuracy was only 0.0337 above a frozen shuffled-label
+  control. Source holdouts diverged to 0.5900 and 0.7173.
+- **E12—metacognitive readout:** Reversing A/B assignments exposed a dominant
+  position effect. Sign-corrected correctness margins agreed on only 8.35% of
+  row-layer pairs and correlated at −0.771 across option orders. After
+  counterbalancing, candidate performance was only 0.0059 above its shuffled
+  control and both source holdouts were near chance.
 
 ## 6. Independent OOD audit
 
@@ -181,6 +201,9 @@ select layers, and we did not produce V8.
 6. **Pre-registration is an engineering control against overfitting.** Frozen
    gates converted tempting marginal gains into documented negative results and
    prevented repeated hidden-set tuning.
+7. **Counterbalance elicited judgments.** A direct self-forecast can appear
+   semantic while actually tracking answer position; reversing option order
+   made this failure visible in E12.
 
 ## 8. Limitations and claim boundary
 
@@ -191,7 +214,9 @@ models, perturbations, or mathematical domains. E10 is a new problem source but
 uses the same 8B checkpoint, so it tests problem transfer rather than model-scale
 transfer. Linear separability does not establish that the model uses the probed
 features causally. Finally, sequential exploration before V6 weakens the
-confirmatory status of its public score. Our strongest defensible claim is
+confirmatory status of its public score. E11a and E12 failed before reaching
+their independent Stage B, so they provide strong negative public evidence but
+no additional OOD estimate. Our strongest defensible claim is
 therefore negative: this efficient final-token probe contains in-distribution
 signal, but the available evidence does not support it as a general detector of
 robust mathematical reasoning.
@@ -220,12 +245,14 @@ hardware, although the provided GPU access remains real compute rather than
 ## 10. Conclusion
 
 An efficient multi-layer probe achieved meaningful public and small-private-set
-performance, but plausible representation and classifier refinements did not
-survive strict paired promotion rules, and the frozen method collapsed on an
-independent AIMO problem source. The gap between separability and transfer is
-the main result. Future models in this project must begin with a genuinely new
-mechanistic hypothesis and a named, untouched validation source; the V6 private
-set and E10 labels are permanently excluded from tuning.
+performance, but plausible refinements did not survive strict paired promotion
+rules, the frozen method collapsed on an independent AIMO problem source, and
+two mechanism-changing successors performed near randomized controls. The gap
+between separability, elicited confidence, and transfer is the main result.
+Under our pre-registered stopping logic, this accumulated evidence constitutes
+a technical bottleneck rather than an invitation to tune further on 137 labels.
+Future work requires a genuinely new causal capability or information source;
+the V6 private set and E10 labels remain permanently excluded from tuning.
 
 ## References
 

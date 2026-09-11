@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "notebook_version": "e11a-rrb-multiview-deployed-v6-control-1",
+  "model_id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+  "model_revision": "6e8885a6ff5c1dc5201574c8fd700323f23c25fa",
+  "weight_dtype": "float16",
+  "official_data": {
+    "source_commit": "7e8839966750059b6b1d247a12ab56552c79b342",
+    "input_rows": 141,
+    "unique_problem_rows": 137,
+    "canonical_sha256": "3FC14BFC02F7C1D0D79BB917491C7710F6A798150416B157C6C34205CEC9E067",
+    "label_counts": {
+      "False": 101,
+      "True": 36
+    },
+    "source_counts": {
+      "hendrycks-math-test-reference-100": 52,
+      "hendrycks-math-train-reference-500": 85
+    }
+  },
+  "external_data": {
+    "dataset_id": "HuggingFaceH4/aime_2024",
+    "revision": "2fe88a2f1091d5048c0f36abc874fb997b3dd99a",
+    "row_count": 30,
+    "canonical_sha256": "E538F1A3590EB27C4B93561FCED904A4060E8C1017BBB76F942489CD92AFFB4B",
+    "official_id_overlap": [],
+    "official_normalized_text_overlap": 0
+  },
+  "rrb": {
+    "repository": "https://github.com/pavelgolikov/Robust-Reasoning-Benchmark",
+    "commit": "0ae533b7bda703747089ffd1b5574fc010ea05f7",
+    "variants": [
+      "sentence_reversal",
+      "word_reversal",
+      "split_reversal"
+    ],
+    "tested_problems": 30,
+    "self_inverse_checks": 90,
+    "passed": true
+  },
+  "deployed_v6_control": {
+    "repository_commit": "c87824100d0570078efb21f564ea885bd4acd017",
+    "url": "https://raw.githubusercontent.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests/c87824100d0570078efb21f564ea885bd4acd017/outputs/aimo-small-v6-fixed-layer-vote-20260910.zip",
+    "zip_sha256": "C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E",
+    "artifact_sha256": "7A4DF77D031530DC4998CBC4B6FFF2B8B717F99C7FA04E2646847C6A5BE3672B",
+    "group_count": 25,
+    "vote_count": 225,
+    "codabench_score": "12/19"
+  },
+  "probe_views": [
+    "original",
+    "flatten",
+    "irrelevant",
+    "copied_wrapper"
+  ],
+  "layers": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36
+  ],
+  "feature_names": [
+    "flatten_cosine_mean",
+    "flatten_cosine_late_mean",
+    "flatten_cosine_max",
+    "flatten_relative_l2_mean",
+    "flatten_relative_l2_late_mean",
+    "flatten_relative_l2_max",
+    "irrelevant_cosine_mean",
+    "irrelevant_cosine_late_mean",
+    "irrelevant_cosine_max",
+    "irrelevant_relative_l2_mean",
+    "irrelevant_relative_l2_late_mean",
+    "irrelevant_relative_l2_max",
+    "copied_wrapper_cosine_mean",
+    "copied_wrapper_cosine_late_mean",
+    "copied_wrapper_cosine_max",
+    "copied_wrapper_relative_l2_mean",
+    "copied_wrapper_relative_l2_late_mean",
+    "copied_wrapper_relative_l2_max"
+  ],
+  "hardware": {
+    "torch": "2.10.0+cu128",
+    "devices": [
+      {
+        "index": 0,
+        "name": "Tesla T4",
+        "memory_gib": 14.56,
+        "capability": "7.5"
+      },
+      {
+        "index": 1,
+        "name": "Tesla T4",
+        "memory_gib": 14.56,
+        "capability": "7.5"
+      }
+    ]
+  },
+  "model_device_map": {
+    "model.embed_tokens": "0",
+    "model.layers.0": "0",
+    "model.layers.1": "0",
+    "model.layers.2": "0",
+    "model.layers.3": "0",
+    "model.layers.4": "0",
+    "model.layers.5": "0",
+    "model.layers.6": "0",
+    "model.layers.7": "0",
+    "model.layers.8": "0",
+    "model.layers.9": "0",
+    "model.layers.10": "0",
+    "model.layers.11": "0",
+    "model.layers.12": "0",
+    "model.layers.13": "0",
+    "model.layers.14": "0",
+    "model.layers.15": "0",
+    "model.layers.16": "1",
+    "model.layers.17": "1",
+    "model.layers.18": "1",
+    "model.layers.19": "1",
+    "model.layers.20": "1",
+    "model.layers.21": "1",
+    "model.layers.22": "1",
+    "model.layers.23": "1",
+    "model.layers.24": "1",
+    "model.layers.25": "1",
+    "model.layers.26": "1",
+    "model.layers.27": "1",
+    "model.layers.28": "1",
+    "model.layers.29": "1",
+    "model.layers.30": "1",
+    "model.layers.31": "1",
+    "model.layers.32": "1",
+    "model.layers.33": "1",
+    "model.layers.34": "1",
+    "model.layers.35": "1",
+    "model.norm": "1",
+    "model.rotary_emb": "1",
+    "lm_head": "1"
+  },
+  "extraction": {
+    "total_jobs": 668,
+    "new_jobs": 668,
+    "cached_jobs": 0
+  },
+  "max_official_token_count": 312,
+  "max_external_token_count": 477,
+  "external_labels_used_in_stage_a": false,
+  "e10_labels_used": false
+}
