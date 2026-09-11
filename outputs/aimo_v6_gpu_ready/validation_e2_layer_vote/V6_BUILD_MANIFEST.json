@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "built_at_local_date": "2026-09-10",
+  "archive": {
+    "name": "aimo-small-v6-fixed-layer-vote-20260910.zip",
+    "bytes": 4225167,
+    "sha256": "C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E",
+    "entries": [
+      "solution.py",
+      "probe_inference.py",
+      "small.txt",
+      "probe_artifacts/probe_artifact.pkl"
+    ]
+  },
+  "artifact": {
+    "schema_version": 3,
+    "bytes": 8316999,
+    "sha256": "7A4DF77D031530DC4998CBC4B6FFF2B8B717F99C7FA04E2646847C6A5BE3672B",
+    "eligible_groups": 25,
+    "layers": [4, 8, 12, 16, 20, 24, 28, 32, 36],
+    "total_votes": 225
+  },
+  "validation": {
+    "interpretation": "sequential_exploratory",
+    "grouped_balanced_accuracy": 0.7047579757975797,
+    "bootstrap_95_lower": 0.6169437631511935,
+    "source_holdout_balanced_accuracy": [
+      0.675,
+      0.7073170731707317
+    ],
+    "randomized_control_balanced_accuracy": 0.5858085808580857,
+    "randomized_control_advantage": 0.11894939493949397,
+    "gate_passed": true,
+    "deployment_replay_passed": true
+  },
+  "uploaded": false
+}

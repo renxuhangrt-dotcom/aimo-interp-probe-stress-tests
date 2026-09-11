@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "generated_from_frozen_results": true,
+  "files": [
+    {
+      "path": "aimo-small-v6-fixed-layer-vote-20260910.zip",
+      "bytes": 4225167,
+      "sha256": "C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E"
+    },
+    {
+      "path": "EXPERIMENT_LOG.md",
+      "bytes": 25754,
+      "sha256": "D8970AECED4D51731BF7B9AA8281B491E6FFAD42718F2BC810ECAE9B22FF24F5"
+    },
+    {
+      "path": "OFFICIAL_DATA_AUDIT_AND_E10_PLAN.md",
+      "bytes": 3478,
+      "sha256": "1F22EFCCDF99B0816AD5DEF8D454B089A74FD902DC408748136861F4A18E2C08"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/E6_PREREGISTRATION.md",
+      "bytes": 1882,
+      "sha256": "3F0C1FCFC302CCB95D49BC8D3889A9D8AE1D40DF547E3E7E7813BB7B97117F7F"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/E7_PREREGISTRATION.md",
+      "bytes": 2536,
+      "sha256": "C07DC31F138914CA64821F29C96E7F8825953DE0FAC5CB0B1D4CD147E393DBE9"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/E8_PREREGISTRATION.md",
+      "bytes": 1930,
+      "sha256": "A57CB6681192AC5E84940CD996CE12E69CB72D71855186C8C4C38AB170CA80A7"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/E9_PREREGISTRATION.md",
+      "bytes": 1888,
+      "sha256": "CB20EA0C1A285E142DA1D0F2ECA41367D26288366BCE4179A9BCE29716C76A63"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/E10_PREREGISTRATION.md",
+      "bytes": 3030,
+      "sha256": "D4DA08BACB7379D3AA5669061B4D9FCEA8881D23F5AB927C492665726F9C8BED"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/validation_e2_layer_vote/validation_result.json",
+      "bytes": 17970,
+      "sha256": "4E309F67EACEC5D5F7B24C6BB35650A33905307BD99018C187AEF88994348948"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/validation_e6_layer_delta_vote/validation_result.json",
+      "bytes": 18885,
+      "sha256": "ABE6AADEFE57B20771D2F642F2A014950C5B556A53486454C00181309A2150D1"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/validation_e7_problem_mean/validation_result.json",
+      "bytes": 21194,
+      "sha256": "03B75FF741C8F1D3C0D09069633B230F0A1704FE11AE2AB0E39D49AC422A0367"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/validation_e8_problem_last/validation_result.json",
+      "bytes": 21409,
+      "sha256": "3285850B9B1472D0FBBAAF4487999BE8C98BCA185BB15F1357039A2A1F80D789"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/validation_e9_pca_rbf/validation_result.json",
+      "bytes": 33004,
+      "sha256": "6C82C24744014ECA6F493680ED1722889C443B5D099EAA0ECD65346069CFFFE6"
+    },
+    {
+      "path": "aimo_v6_gpu_ready/validation_e10_ood_small/validation_result.json",
+      "bytes": 5715,
+      "sha256": "D9FC393082435D010D83670C77126E607DFD6A7B6CE303A4CD9733079BC6DCE5"
+    },
+    {
+      "path": "technical_report/TECHNICAL_REPORT_DRAFT.md",
+      "bytes": 13749,
+      "sha256": "CE2D28ED61823E2FACDD4F20ABA7585CC9D6D30C61DD6E82116F9B02CDF1B645"
+    },
+    {
+      "path": "technical_report/TECHNICAL_REPORT_2PAGE_DRAFT.md",
+      "bytes": 6659,
+      "sha256": "5BA32DC918F1DDB294A8F09CDA3FAC56E8D566B2115D22CCE92ED9A52304C590"
+    },
+    {
+      "path": "technical_report/NEW_MODEL_GATE.md",
+      "bytes": 3122,
+      "sha256": "66CBF4F34EBC78C2A7FC9AE20A399BCAE2D647964EDA2E729002D427A7AF216A"
+    },
+    {
+      "path": "technical_report/ROADMAP_ZH.md",
+      "bytes": 3092,
+      "sha256": "738C8D42ECA967CE5A4CC17D907C7EB3A03118548D489B5DA591276513B387FA"
+    },
+    {
+      "path": "technical_report/SUBMISSION_CHECKLIST.md",
+      "bytes": 1504,
+      "sha256": "7609672116BF95973691C1490911D6AF1B6F44E3CBFA2CFC976D8F447882BEB5"
+    },
+    {
+      "path": "technical_report/build_report_assets.py",
+      "bytes": 12970,
+      "sha256": "0D07D615B868CFF03DDB70E4A4CAC8F65E647F1FB830E04E22CF86CC62CB7A0C"
+    },
+    {
+      "path": "technical_report/build_two_page_pdf.py",
+      "bytes": 19246,
+      "sha256": "59481024690C3D02F189AFA58CDEF0C42ABFC5939C2D03308A51ED298C915810"
+    },
+    {
+      "path": "technical_report/test_report_integrity.py",
+      "bytes": 3051,
+      "sha256": "1911C11D3D05B4D7A9A69B841DF9941E633F9DE5E5F1644B0598F5A659D7213D"
+    },
+    {
+      "path": "technical_report/results_summary.csv",
+      "bytes": 898,
+      "sha256": "5D2F6D76AC39138A60E05E4E04448DE64D663115FC109E7FA32652492243FD7C"
+    },
+    {
+      "path": "technical_report/e10_summary.csv",
+      "bytes": 203,
+      "sha256": "BBEC5E06FA0B3E769EAC3CBE1596695CF65F0DE795AE88000F34C860169DB89C"
+    },
+    {
+      "path": "technical_report/results_overview.svg",
+      "bytes": 5853,
+      "sha256": "3BDC819D712E3D5358A3D591D6D9847EE6EC268A44C6CF336D7C55353656F935"
+    },
+    {
+      "path": "technical_report/results_overview.png",
+      "bytes": 44560,
+      "sha256": "B7F10CE3F5C7CACB6745EAE751837306E8E11E16E36BD81B2834740B898B7F22"
+    },
+    {
+      "path": "technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_draft.pdf",
+      "bytes": 63129,
+      "sha256": "CAF176BEA0C8856E73B600A4DA8DBF7CC7558E5AB5A79674E6543422BE7D72E3"
+    }
+  ]
+}

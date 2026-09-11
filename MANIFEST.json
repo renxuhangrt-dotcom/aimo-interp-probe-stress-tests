@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "release": "aimo-interp-probe-stress-tests-v0.1.0",
+  "author": "XUHANG REN",
+  "file_count": 91,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 98,
+      "sha256": "26485396C631778C2E6C93F2171E7156AFEC3217AA21C953EB495654905F63D8"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 116,
+      "sha256": "8C5D3F79BA49ECBD483C9E88C570E620D61E04C8D8C989A633E7602B280C7141"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 381,
+      "sha256": "810EB5F16A0A9C2502580FEE8E407B60E6831D01CFC565449FE97A821EDFD05D"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11558,
+      "sha256": "1EB85FC97224598DAD1852B5D6483BBCF0AA8608790DCC657A5A2A761AE9C8C6"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 254,
+      "sha256": "279C2DB34A0B3117F377F53028A7B006CCD72EC248AAC7A8BC682F52AC72A8EF"
+    },
+    {
+      "path": "outputs/aimo-small-v6-fixed-layer-vote-20260910.zip",
+      "bytes": 4225167,
+      "sha256": "C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/audit_public_cross_model_transfer.py",
+      "bytes": 9012,
+      "sha256": "CD6D3A8C0C977F4B7FBBBAB8E45056FF45544D1505B1CFDB85CBAB545CB6F444"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/data/dataset_audit.json",
+      "bytes": 1036,
+      "sha256": "DFE9109314BB25E9224C63BBA8CD58CCF85416656E5A60A273B04CDF40E94E5D"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/E10_PREREGISTRATION.md",
+      "bytes": 3030,
+      "sha256": "D4DA08BACB7379D3AA5669061B4D9FCEA8881D23F5AB927C492665726F9C8BED"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/E2_PREREGISTRATION.md",
+      "bytes": 1770,
+      "sha256": "814C756C2527EF9BB8DA98A6B41674058FFB1974F873ED1542C520287EEF3F51"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/E6_PREREGISTRATION.md",
+      "bytes": 1882,
+      "sha256": "3F0C1FCFC302CCB95D49BC8D3889A9D8AE1D40DF547E3E7E7813BB7B97117F7F"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/E7_PREREGISTRATION.md",
+      "bytes": 2536,
+      "sha256": "C07DC31F138914CA64821F29C96E7F8825953DE0FAC5CB0B1D4CD147E393DBE9"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/E8_PREREGISTRATION.md",
+      "bytes": 1930,
+      "sha256": "A57CB6681192AC5E84940CD996CE12E69CB72D71855186C8C4C38AB170CA80A7"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/E9_PREREGISTRATION.md",
+      "bytes": 1888,
+      "sha256": "CB20EA0C1A285E142DA1D0F2ECA41367D26288366BCE4179A9BCE29716C76A63"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/export_layer_vote_artifact.py",
+      "bytes": 9877,
+      "sha256": "F434A551BCD6A47BE89B46A07F9ECCE65A06A76180AD83F78959D871C6F40F6E"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/extract_hidden_states.py",
+      "bytes": 9154,
+      "sha256": "0BD9153EFD2D82C171C9B318E4B504EBC13CD6773C2F45301E4FA684073339A7"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/PRECOMPUTE_AUDIT.md",
+      "bytes": 2721,
+      "sha256": "6A0F77AB59E2BD3F75D2597998332D5D9C4C16C8AB63C16508C702F01879DA71"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/prepare_dataset.py",
+      "bytes": 5917,
+      "sha256": "BDEEB56CA648D8436190900EB7FDCA6BA7CB167CC5A2FDFBAD6BB3B489F837B4"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/README.md",
+      "bytes": 2303,
+      "sha256": "E03A6D0534C9583C873A2E602DB0C6FDAF591CA89AAD52351438733D54D8B662"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/requirements-gpu.txt",
+      "bytes": 105,
+      "sha256": "C8DD02E9950B823493944EF8C2CA7B6E7788496A8711E8CFFA1B08282149D14C"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/score_e10_ood_v6.py",
+      "bytes": 13568,
+      "sha256": "D264C81DF8D36C088C9ECB0DEDD2C1759DF7D90727BE58FAC06D9A1284FB9A6C"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/test_deployed_artifact_replay.py",
+      "bytes": 5083,
+      "sha256": "F7B45E6CAFF2D2B13C585210A7C8625E3509B3E651F1E784419565AF4DDBAD2A"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/test_e10_scorer.py",
+      "bytes": 3134,
+      "sha256": "3C64A953A402924653D4B570842D1961B9A61518FB19350634B47E398A3ABF98"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/test_layer_vote_probe.py",
+      "bytes": 1355,
+      "sha256": "745293C823F3E1B0B97EEE11FC129B4BEEEB400666457C8FB2C40A0488789F78"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/test_pipeline.py",
+      "bytes": 5530,
+      "sha256": "D8A91E37F0A1987F34BBF388376C0485CB6857E82CE8A3A703F4825F4D6E940D"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/train_layer_delta_vote_probe.py",
+      "bytes": 12601,
+      "sha256": "4D29605B620A4D6043C96A5FD84D6DB51F6BDA048D6F090BEB9600C69BAD192C"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/train_layer_vote_probe.py",
+      "bytes": 11084,
+      "sha256": "F5B59856201AF5D03E18E417CD4E5B9B9F0BC6863FF9070182B5C90A297E4425"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/train_nested_probe.py",
+      "bytes": 16922,
+      "sha256": "11FC14B5D57B9C321EB503E43302C861A000BDD110A9BF62B2F15C34FA451BEF"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/train_pca_rbf_vote_probe.py",
+      "bytes": 18576,
+      "sha256": "BE70AB6B43465ECD54E668D7A771B66EC2BB43950EE012504CDC6E183887E383"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/train_problem_last_vote_probe.py",
+      "bytes": 12995,
+      "sha256": "17CBED1320437A2CC32CC63ADBD490D20F0A49CB2DD2FC1A722B9F6E1D0FF8A1"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/train_problem_mean_vote_probe.py",
+      "bytes": 12993,
+      "sha256": "F28ECC6493EEEFCD9988F6436A57EF2A52280462A366ACEB5BD08F70A9B59517"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e10_ood_small/predictions.csv",
+      "bytes": 392,
+      "sha256": "30A9AAFD7A0ECDDCBA8C17A918C6EEFECBB160706D61F62075A4092D4F4A3F38"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e10_ood_small/VALIDATION_REPORT.md",
+      "bytes": 673,
+      "sha256": "416D2ECADD5DE4948B11E38085794E8AA28D936D5B77848D708E088FFFC5B9A4"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e10_ood_small/validation_result.json",
+      "bytes": 5592,
+      "sha256": "98C982B5BA2394688BB54D17FC0D64CCAFB218CA3B7FFBB87DEF962B356CD340"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/ARTIFACT_GATE.json",
+      "bytes": 1720,
+      "sha256": "4C9008239E6A04DF2950E6F54B087BDA245F39577BC022DA63055EBB74A1F759"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/ARTIFACT_GATE.md",
+      "bytes": 821,
+      "sha256": "9A9E9E121C355F3AF92C80B8B5C9CCE94E33EA6A3EEBAC062F952FAF4863DED0"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/PUBLIC_CROSS_MODEL_AUDIT.json",
+      "bytes": 3510,
+      "sha256": "29D63A14E786FEB8692EF2BBD1643A9BB906443BE6A6CF4E22A1B2C923241A92"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/PUBLIC_CROSS_MODEL_AUDIT.md",
+      "bytes": 1443,
+      "sha256": "D83824BCBE97046A1F9C7E5F8E1A3A4C72624B6A79620EAC13A4C92459FA2F33"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/V6_BUILD_MANIFEST.json",
+      "bytes": 1093,
+      "sha256": "4D827E22523286979216CE0843909216441B6DE6A75A466F5772EA60C663A828"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/V6_BUILD_REPORT.md",
+      "bytes": 2567,
+      "sha256": "34790D7DCD784A1BE13C96F7D3F5F1D543D049DC3A2CA5E09B36C0504D8890EF"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/V6_PRIVATE_RESULT.md",
+      "bytes": 685,
+      "sha256": "1EEF9F0A609CA66E9ED830EC89708D72918446B7B39BE7B2F7AE44881AD15298"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/VALIDATION_REPORT.md",
+      "bytes": 760,
+      "sha256": "320CE89D3DA3E0E59A1311F3AEDB253A09C8FEA2E33BAC18413AD19331C29F94"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e2_layer_vote/validation_result.json",
+      "bytes": 17970,
+      "sha256": "4E309F67EACEC5D5F7B24C6BB35650A33905307BD99018C187AEF88994348948"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e6_layer_delta_vote/VALIDATION_REPORT.md",
+      "bytes": 1138,
+      "sha256": "1EABD3136A45DC250556DE55246CA5A4FB7432CBF55C5741A19255E854D1300D"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e6_layer_delta_vote/validation_result.json",
+      "bytes": 18885,
+      "sha256": "ABE6AADEFE57B20771D2F642F2A014950C5B556A53486454C00181309A2150D1"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e7_problem_mean/VALIDATION_REPORT.md",
+      "bytes": 1198,
+      "sha256": "470CE645527545C6E9692D495934EE191B7B7CB8E02472E38B4040F7DBD48BF6"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e7_problem_mean/validation_result.json",
+      "bytes": 21194,
+      "sha256": "03B75FF741C8F1D3C0D09069633B230F0A1704FE11AE2AB0E39D49AC422A0367"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e8_problem_last/VALIDATION_REPORT.md",
+      "bytes": 1192,
+      "sha256": "4DE3D4750179E214D39020044D4B2F026BF9EF0AED3654625E0043A932F1BD22"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e8_problem_last/validation_result.json",
+      "bytes": 21409,
+      "sha256": "3285850B9B1472D0FBBAAF4487999BE8C98BCA185BB15F1357039A2A1F80D789"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e9_pca_rbf/VALIDATION_REPORT.md",
+      "bytes": 1207,
+      "sha256": "8B7FAA859FE53ECEE8C0C666073621F7BBD046EF3228135BC120E28226E8E185"
+    },
+    {
+      "path": "outputs/aimo_v6_gpu_ready/validation_e9_pca_rbf/validation_result.json",
+      "bytes": 33004,
+      "sha256": "6C82C24744014ECA6F493680ED1722889C443B5D099EAA0ECD65346069CFFFE6"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/aimo_e10_ood_small.ipynb",
+      "bytes": 35938,
+      "sha256": "70A0FDC4F280400D588A7B96990B1A4C9BC82B84D3520A1914B65CAD0CB645F1"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/aimo_problem_token_views.ipynb",
+      "bytes": 31188,
+      "sha256": "02DD2F904CEEBC512392234237AEFE885AB219FBCDF88F237484E1D303FC847D"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/aimo_public_transfer_audit_v2.ipynb",
+      "bytes": 30130,
+      "sha256": "CF87A5ADD7DB17A71ED1501931CE2D920F5DB10D6166B196B002CBA4955678E6"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/aimo_v6_kaggle_v2.ipynb",
+      "bytes": 26279,
+      "sha256": "D2024085EE929C3D7F30FC62E0B96F960268578F0F0F70A0369086088E517400"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/BUILD_REPORT.md",
+      "bytes": 1118,
+      "sha256": "FBA22349F13994F8DF9A2F2C31F6F84EE7DF8C2461924970D0AE7493DCF80E24"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/E10_README.md",
+      "bytes": 1491,
+      "sha256": "174527A853DED935C2925461A5957C8326D9DB9413E887ED9B9A267B0ADD7572"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/kaggle_extract_e10_ood_small.py",
+      "bytes": 27897,
+      "sha256": "6A14966292BE3E486BB57B33ED88E9156DCDD83991B429AFCE58A9026606D269"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/kaggle_extract_problem_views.py",
+      "bytes": 24135,
+      "sha256": "0B8983234F3BAD584258B96E11DD8B323ADDD9A66069FCF11185CCC284ED1646"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/kaggle_extract_public_transfer.py",
+      "bytes": 23297,
+      "sha256": "3B6881D08E8AA115D39ADE93BC5411B54E71D3250CD2B5D2BEE301B641D80EAA"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/kaggle_extract_v6.py",
+      "bytes": 20178,
+      "sha256": "FB79E0D7EA5AFAA0D8F34226E1E4E768D671A6EAD1936D6C7A3225643770A7FA"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/make_notebook.py",
+      "bytes": 2203,
+      "sha256": "3449809B448A2A6B1C2D8FB3EEC913D4AFD1537027C79A3A95A8F3BDD3FF9CE1"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/PROBLEM_VIEWS_BUILD_REPORT.md",
+      "bytes": 1431,
+      "sha256": "1561A408AB54777DC1D040C1E36FD5763E026F69BB9A5BD55ADB3C093F045FCA"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/PROBLEM_VIEWS_README.md",
+      "bytes": 1487,
+      "sha256": "D92AACC0BAB229877918D87A33322D241F12827EA24088DB3CD1C431815DDBD5"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/PUBLIC_TRANSFER_README.md",
+      "bytes": 1232,
+      "sha256": "4BD7FD2E04A0A25EF32329B31AC59965C345B6ED91356B65B0CF36E08EEA08A0"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/README.md",
+      "bytes": 1833,
+      "sha256": "94DC48C8B79DA2236C683BD54761C3AE13924D0FDD1A8C6DCB882843680F7719"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/test_e10_ood_extract.py",
+      "bytes": 3926,
+      "sha256": "B1A81E23645AA28AF8D78DB826996D53CA65ABEBC56B0AEA88557E70DCF007D1"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/test_kaggle_extract.py",
+      "bytes": 4259,
+      "sha256": "62EFB30AAB395213CB381775975D1D7E7F3E423BA217473614AC23B864667FF3"
+    },
+    {
+      "path": "outputs/aimo_v6_kaggle/test_problem_views_extract.py",
+      "bytes": 3935,
+      "sha256": "BAEAFA3A61E4936E37EB354AF1EECADEAB96A2004D9E4D0EE760643072F2B078"
+    },
+    {
+      "path": "outputs/EXPERIMENT_LOG.md",
+      "bytes": 25754,
+      "sha256": "D8970AECED4D51731BF7B9AA8281B491E6FFAD42718F2BC810ECAE9B22FF24F5"
+    },
+    {
+      "path": "outputs/OFFICIAL_DATA_AUDIT_AND_E10_PLAN.md",
+      "bytes": 3478,
+      "sha256": "1F22EFCCDF99B0816AD5DEF8D454B089A74FD902DC408748136861F4A18E2C08"
+    },
+    {
+      "path": "outputs/technical_report/build_report_assets.py",
+      "bytes": 12970,
+      "sha256": "0D07D615B868CFF03DDB70E4A4CAC8F65E647F1FB830E04E22CF86CC62CB7A0C"
+    },
+    {
+      "path": "outputs/technical_report/build_two_page_pdf.py",
+      "bytes": 19246,
+      "sha256": "59481024690C3D02F189AFA58CDEF0C42ABFC5939C2D03308A51ED298C915810"
+    },
+    {
+      "path": "outputs/technical_report/e10_summary.csv",
+      "bytes": 203,
+      "sha256": "BBEC5E06FA0B3E769EAC3CBE1596695CF65F0DE795AE88000F34C860169DB89C"
+    },
+    {
+      "path": "outputs/technical_report/NEW_MODEL_GATE.md",
+      "bytes": 3122,
+      "sha256": "66CBF4F34EBC78C2A7FC9AE20A399BCAE2D647964EDA2E729002D427A7AF216A"
+    },
+    {
+      "path": "outputs/technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_draft.pdf",
+      "bytes": 63129,
+      "sha256": "CAF176BEA0C8856E73B600A4DA8DBF7CC7558E5AB5A79674E6543422BE7D72E3"
+    },
+    {
+      "path": "outputs/technical_report/reproducibility_manifest.json",
+      "bytes": 5087,
+      "sha256": "19F07E2FAB27D245FD4DE84334C2D5AC27B8E5E86E2034F821C871A6E038A3F0"
+    },
+    {
+      "path": "outputs/technical_report/results_overview.png",
+      "bytes": 44560,
+      "sha256": "B7F10CE3F5C7CACB6745EAE751837306E8E11E16E36BD81B2834740B898B7F22"
+    },
+    {
+      "path": "outputs/technical_report/results_overview.svg",
+      "bytes": 5853,
+      "sha256": "3BDC819D712E3D5358A3D591D6D9847EE6EC268A44C6CF336D7C55353656F935"
+    },
+    {
+      "path": "outputs/technical_report/results_summary.csv",
+      "bytes": 898,
+      "sha256": "5D2F6D76AC39138A60E05E4E04448DE64D663115FC109E7FA32652492243FD7C"
+    },
+    {
+      "path": "outputs/technical_report/ROADMAP_ZH.md",
+      "bytes": 3092,
+      "sha256": "738C8D42ECA967CE5A4CC17D907C7EB3A03118548D489B5DA591276513B387FA"
+    },
+    {
+      "path": "outputs/technical_report/SUBMISSION_CHECKLIST.md",
+      "bytes": 1504,
+      "sha256": "7609672116BF95973691C1490911D6AF1B6F44E3CBFA2CFC976D8F447882BEB5"
+    },
+    {
+      "path": "outputs/technical_report/TECHNICAL_REPORT_2PAGE_DRAFT.md",
+      "bytes": 6659,
+      "sha256": "5BA32DC918F1DDB294A8F09CDA3FAC56E8D566B2115D22CCE92ED9A52304C590"
+    },
+    {
+      "path": "outputs/technical_report/TECHNICAL_REPORT_DRAFT.md",
+      "bytes": 13749,
+      "sha256": "CE2D28ED61823E2FACDD4F20ABA7585CC9D6D30C61DD6E82116F9B02CDF1B645"
+    },
+    {
+      "path": "outputs/technical_report/test_report_integrity.py",
+      "bytes": 3051,
+      "sha256": "1911C11D3D05B4D7A9A69B841DF9941E633F9DE5E5F1644B0598F5A659D7213D"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3041,
+      "sha256": "F1828C95C8D4B6CE16579EF2BCFCBE921E521D7EB7F5C3DA5005E0BAB30DC99D"
+    },
+    {
+      "path": "requirements-cpu.txt",
+      "bytes": 55,
+      "sha256": "5786C09E2A5EF867E636E17458ED04E7D06DA7C25395AC3C888EAE7878EFB656"
+    },
+    {
+      "path": "requirements-gpu.txt",
+      "bytes": 111,
+      "sha256": "D70871914F43A8A74FC5C62F1E9F17120BB975F13C29CF1C17FCAD1CB7A793C8"
+    },
+    {
+      "path": "third_party/aimo-baselines/LICENSE",
+      "bytes": 11558,
+      "sha256": "1EB85FC97224598DAD1852B5D6483BBCF0AA8608790DCC657A5A2A761AE9C8C6"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 422,
+      "sha256": "32F997ED2CA9B89F1B9FDF519885F592924B34D9A58735283FF97C30120E6376"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "bytes": 1095,
+      "sha256": "4ED4FCA0FF82D80A86CC6BA763C7144E951C1B7BBEA4F3EB5B631F1792C8ACD8"
+    }
+  ]
+}

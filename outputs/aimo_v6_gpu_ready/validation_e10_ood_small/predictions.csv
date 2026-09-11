@@ -1,0 +1,11 @@
+problem_id,model_is_robust,v6_prediction,positive_vote_fraction
+057f8a,true,true,0.853333333333
+192e23,true,true,1.000000000000
+1acac0,false,true,1.000000000000
+1fce4b,false,true,0.977777777778
+349493,false,true,0.968888888889
+480182,false,true,0.911111111111
+71beb6,false,true,0.862222222222
+88c219,false,true,0.768888888889
+a1d40b,false,true,0.866666666667
+bbd91e,false,true,0.986666666667

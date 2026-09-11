@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: 'If you use this work, please cite the technical report.'
+title: 'When Good Probes Fail: Pre-registered Stress Tests of an Efficient Hidden-State Robustness Predictor for Mathematical Reasoning'
+version: 0.1.0
+date-released: 2026-09-11
+license: Apache-2.0
+authors:
+  - family-names: Ren
+    given-names: Xuhang
+    email: renxuhang2020@qq.com

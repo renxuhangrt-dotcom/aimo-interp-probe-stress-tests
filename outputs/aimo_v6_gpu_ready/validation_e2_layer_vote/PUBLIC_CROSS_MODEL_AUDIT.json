@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "method": "frozen_v6_problem_proxy_cross_model_audit",
+  "scientific_role": "diagnostic_only_no_tuning",
+  "cases": 24,
+  "unique_problems": 8,
+  "models": 7,
+  "all_cases": {
+    "accuracy": 0.375,
+    "balanced_accuracy": 0.5,
+    "always_false_accuracy": 0.625,
+    "positive_labels": 9,
+    "positive_predictions": 24,
+    "positive_vote_fraction_min": 0.7688888888888888,
+    "positive_vote_fraction_median": 0.9777777777777777,
+    "positive_vote_fraction_mean": 0.9292592592592591,
+    "positive_vote_fraction_max": 1.0
+  },
+  "non_qwen_training_model_cases": {
+    "cases": 23,
+    "accuracy": 0.391304347826087,
+    "balanced_accuracy": 0.5,
+    "always_false_accuracy": 0.6086956521739131
+  },
+  "per_model": {
+    "Qwen/Qwen3.5-397B-A17B-FP8:low": {
+      "cases": 5,
+      "positive_labels": 1,
+      "positive_predictions": 5,
+      "accuracy": 0.2
+    },
+    "gemini-3.1-pro-preview:low": {
+      "cases": 3,
+      "positive_labels": 0,
+      "positive_predictions": 3,
+      "accuracy": 0.0
+    },
+    "gpt-5.2-2025-12-11:low": {
+      "cases": 3,
+      "positive_labels": 3,
+      "positive_predictions": 3,
+      "accuracy": 1.0
+    },
+    "gpt-oss-120b:low": {
+      "cases": 5,
+      "positive_labels": 0,
+      "positive_predictions": 5,
+      "accuracy": 0.0
+    },
+    "huikang-gpt-oss-120b-aimo3:low": {
+      "cases": 3,
+      "positive_labels": 1,
+      "positive_predictions": 3,
+      "accuracy": 0.3333333333333333
+    },
+    "lukealonso/GLM-5.1-NVFP4:low": {
+      "cases": 4,
+      "positive_labels": 4,
+      "positive_predictions": 4,
+      "accuracy": 1.0
+    },
+    "qwen3-8b:low": {
+      "cases": 1,
+      "positive_labels": 0,
+      "positive_predictions": 1,
+      "accuracy": 0.0
+    }
+  },
+  "per_problem": {
+    "05b3c53c147a": {
+      "cases": 2,
+      "positive_labels": 1,
+      "positive_vote_fraction": 0.8622222222222222,
+      "prediction": true
+    },
+    "474474902d2c": {
+      "cases": 4,
+      "positive_labels": 2,
+      "positive_vote_fraction": 0.9777777777777777,
+      "prediction": true
+    },
+    "60cdd62c418b": {
+      "cases": 6,
+      "positive_labels": 1,
+      "positive_vote_fraction": 0.8666666666666667,
+      "prediction": true
+    },
+    "6830d79dc787": {
+      "cases": 1,
+      "positive_labels": 0,
+      "positive_vote_fraction": 0.7688888888888888,
+      "prediction": true
+    },
+    "847826a6d2cd": {
+      "cases": 1,
+      "positive_labels": 0,
+      "positive_vote_fraction": 0.8533333333333334,
+      "prediction": true
+    },
+    "a59a836b9807": {
+      "cases": 4,
+      "positive_labels": 2,
+      "positive_vote_fraction": 1.0,
+      "prediction": true
+    },
+    "b20a3957abef": {
+      "cases": 1,
+      "positive_labels": 0,
+      "positive_vote_fraction": 0.9111111111111111,
+      "prediction": true
+    },
+    "be2e6516aead": {
+      "cases": 5,
+      "positive_labels": 3,
+      "positive_vote_fraction": 0.9866666666666667,
+      "prediction": true
+    }
+  },
+  "limitations": [
+    "The public problem texts are evaluated with frozen DeepSeek representations; labels for the other model IDs were not used for training.",
+    "The public sample is tiny and its model IDs do not exactly match every currently cached evaluation checkpoint.",
+    "This audit freezes the V6 artifact and threshold; it must not be used for per-case or leaderboard-driven tuning."
+  ]
+}

@@ -1,0 +1,6 @@
+experiment,method,grouped_oof_balanced_accuracy,grouped_oof_accuracy,delta_balanced_accuracy_vs_v6,bootstrap_95_lower,source_holdout_a_balanced_accuracy,source_holdout_b_balanced_accuracy,source_holdout_mean_balanced_accuracy,randomized_control_advantage,disagreement_vs_v6,gate_passed
+V6,Final prompt token + linear vote,0.704758,0.656934,0.000000,0.616944,0.675000,0.707317,0.691159,0.118949,,True
+E6,Adjacent-layer deltas + linear vote,0.713696,0.656934,0.008938,0.630798,0.675000,0.661863,0.668431,0.150715,0.014599,False
+E7,Problem-token mean + linear vote,0.718647,0.664234,0.013889,0.639071,0.611667,0.756098,0.683882,0.198295,0.124088,False
+E8,Final problem token + linear vote,0.694857,0.642336,-0.009901,0.610076,0.658333,0.661863,0.660098,0.117024,0.072993,False
+E9,Final prompt token + PCA-RBF vote,0.712596,0.708029,0.007838,0.623326,0.628333,0.768293,0.698313,0.121012,0.109489,False

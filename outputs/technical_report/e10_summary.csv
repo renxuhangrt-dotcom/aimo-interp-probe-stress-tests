@@ -1,0 +1,2 @@
+cases,negative_labels,positive_labels,v6_accuracy,v6_balanced_accuracy,best_constant_accuracy,advantage_over_best_constant,predicted_positive,decision
+10,8,2,0.200000,0.500000,0.800000,-0.600000,10,FAIL

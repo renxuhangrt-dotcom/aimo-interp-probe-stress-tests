@@ -1,0 +1,49 @@
+{
+  "artifact": "C:\\Users\\renxu\\Documents\\Codex\\2026-09-09\\aimo-prize-codex-ai-vibe-coding\\work\\v6_layer_vote_build_20260910\\probe_artifacts\\probe_artifact.pkl",
+  "sha256": "7A4DF77D031530DC4998CBC4B6FFF2B8B717F99C7FA04E2646847C6A5BE3672B",
+  "model_id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+  "schema_version": 3,
+  "strategy": "fixed_multilayer_majority_vote",
+  "layers": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36
+  ],
+  "selected_layer": null,
+  "group_counts_by_control_task": {
+    "NONE": 25
+  },
+  "eligible_real_label_groups": 25,
+  "eligible_fold_selected_layer_scores": [],
+  "selected_layer_aggregate_score": 0.7047579757975797,
+  "best_single_probe": {},
+  "best_to_aggregate_gap": null,
+  "declared_validation_gate": {
+    "grouped_balanced_accuracy": 0.7047579757975797,
+    "bootstrap_95_lower": 0.6169437631511935,
+    "selection_scope": "fixed_multilayer_problem_grouped",
+    "source_holdout_balanced_accuracy": {
+      "hendrycks-math-test-reference-100 -> hendrycks-math-train-reference-500": 0.675,
+      "hendrycks-math-train-reference-500 -> hendrycks-math-test-reference-100": 0.7073170731707317
+    },
+    "randomized_control_balanced_accuracy": 0.5858085808580857,
+    "randomized_control_advantage": 0.11894939493949397,
+    "interpretation": "sequential_exploratory"
+  },
+  "thresholds": {
+    "grouped_balanced_accuracy_min": 0.65,
+    "bootstrap_95_lower_strictly_above": 0.55,
+    "source_holdout_balanced_accuracy_each_min": 0.6,
+    "selection_scope": "fixed_multilayer_problem_grouped",
+    "randomized_control_advantage_min": 0.05
+  },
+  "warnings": [],
+  "failures": [],
+  "passed": true
+}

@@ -1,0 +1,34 @@
+{
+  "input": "C:\\Users\\renxu\\Documents\\Codex\\2026-09-09\\aimo-prize-codex-ai-vibe-coding\\work\\official\\baselines\\data\\math-robust-agg.csv",
+  "input_rows": 141,
+  "unique_problem_rows": 137,
+  "removed_duplicate_rows": 4,
+  "duplicated_problem_ids": {
+    "0d430e": 1,
+    "94b3fb": 2,
+    "db39ee": 1
+  },
+  "evaluation_model_id": "qwen3-8b:low",
+  "counts_by_source": {
+    "hendrycks-math-test-reference-100": 52,
+    "hendrycks-math-train-reference-500": 85
+  },
+  "counts_by_label": {
+    "False": 101,
+    "True": 36
+  },
+  "counts_by_source_and_label": {
+    "hendrycks-math-test-reference-100": {
+      "False": 41,
+      "True": 11
+    },
+    "hendrycks-math-train-reference-500": {
+      "False": 60,
+      "True": 25
+    }
+  },
+  "prepared_sha256": "AF46A00B16D9572256027EAE4A42FEB00D5C4A693DC3D0C477251F581F1C8085",
+  "canonical_content_sha256": "3FC14BFC02F7C1D0D79BB917491C7710F6A798150416B157C6C34205CEC9E067",
+  "grouping_key": "problem_id",
+  "leakage_checks_passed": true
+}

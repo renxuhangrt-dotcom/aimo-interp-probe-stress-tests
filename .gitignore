@@ -1,0 +1,11 @@
+.generated-release
+__pycache__/
+*.py[cod]
+.venv*/
+work/
+.cache/
+*.npy
+*.parquet
+*.safetensors
+*.bin
+.env

@@ -1,0 +1,166 @@
+{
+  "accuracy": 0.2,
+  "advantage_over_best_constant": -0.6000000000000001,
+  "always_false_accuracy": 0.8,
+  "always_true_accuracy": 0.2,
+  "balanced_accuracy": 0.5,
+  "best_constant_accuracy": 0.8,
+  "cases": 10,
+  "confusion": {
+    "fn": 0,
+    "fp": 8,
+    "tn": 0,
+    "tp": 2
+  },
+  "decision": "FAIL",
+  "decision_grade": true,
+  "experiment": "E10",
+  "gate_passed": false,
+  "label_counts": {
+    "false": 8,
+    "true": 2
+  },
+  "positive_vote_fraction": {
+    "max": 1.0,
+    "mean": 0.9195555555555556,
+    "median": 0.94,
+    "min": 0.7688888888888888
+  },
+  "prediction_counts": {
+    "false": 0,
+    "true": 10
+  },
+  "provenance": {
+    "e10_dataset_audit": {
+      "all_models": [
+        "Qwen/Qwen3.5-397B-A17B-FP8:low",
+        "gemini-3.1-pro-preview:low",
+        "gpt-5.2-2025-12-11",
+        "gpt-5.2-2025-12-11:low",
+        "gpt-oss-120b:low",
+        "huikang-gpt-oss-120b-aimo3:low",
+        "lukealonso/GLM-5.1-NVFP4:low",
+        "qwen3-8b:low"
+      ],
+      "all_unique_problems": 10,
+      "canonical_content_sha256": "7DBFA5662FC5DF3981B48E12124F6953F85902F04AD5723C93D636133F58B459",
+      "input_rows": 558,
+      "label_rule_audit": {
+        "matching_labels": 137,
+        "reference": "official-baselines/data/math-robust-final.csv",
+        "rule": "model_is_robust := max(absolute_accuracy_decay) <= 0",
+        "unique_problems": 137
+      },
+      "labels_used_by_forward_pass": false,
+      "leakage_checks_passed": true,
+      "prepared_file_sha256": "005FFF6A03C21862AC78073865D83BBE99C92CA2CA9E12436187DDFD0C6F1438",
+      "selected_label_counts": {
+        "false": 8,
+        "true": 2
+      },
+      "selected_model_id": "qwen3-8b:low",
+      "selected_model_rows": 64,
+      "selected_permutation_types": [
+        "distract",
+        "domain",
+        "expert_no_solution",
+        "expert_perturbations",
+        "rename",
+        "rephrase",
+        "typos"
+      ],
+      "selected_unique_problems": 10,
+      "source": "https://huggingface.co/datasets/aimo-interp/aimo-interp-challenge-sample-full/resolve/c0ffb7e678294cc8819d50d979ba28ba49bd02d0/data/validation-00000-of-00001.parquet",
+      "source_file_sha256": "2989AB6A018F2779A821209F414BD0049C9EF1C2488F589FF2D3BF4ED16942FF",
+      "source_revision": "c0ffb7e678294cc8819d50d979ba28ba49bd02d0",
+      "training_normalized_text_overlap": 0,
+      "training_problem_id_overlap": []
+    },
+    "e10_manifest": {
+      "extraction": {
+        "hardware": {
+          "devices": [
+            {
+              "capability": "7.5",
+              "index": 0,
+              "memory_gib": 14.56,
+              "name": "Tesla T4"
+            },
+            {
+              "capability": "7.5",
+              "index": 1,
+              "memory_gib": 14.56,
+              "name": "Tesla T4"
+            }
+          ],
+          "torch": "2.10.0+cu128"
+        },
+        "model_device_map": {
+          "lm_head": "1",
+          "model.embed_tokens": "0",
+          "model.layers.0": "0",
+          "model.layers.1": "0",
+          "model.layers.10": "0",
+          "model.layers.11": "0",
+          "model.layers.12": "0",
+          "model.layers.13": "0",
+          "model.layers.14": "0",
+          "model.layers.15": "0",
+          "model.layers.16": "1",
+          "model.layers.17": "1",
+          "model.layers.18": "1",
+          "model.layers.19": "1",
+          "model.layers.2": "0",
+          "model.layers.20": "1",
+          "model.layers.21": "1",
+          "model.layers.22": "1",
+          "model.layers.23": "1",
+          "model.layers.24": "1",
+          "model.layers.25": "1",
+          "model.layers.26": "1",
+          "model.layers.27": "1",
+          "model.layers.28": "1",
+          "model.layers.29": "1",
+          "model.layers.3": "0",
+          "model.layers.30": "1",
+          "model.layers.31": "1",
+          "model.layers.32": "1",
+          "model.layers.33": "1",
+          "model.layers.34": "1",
+          "model.layers.35": "1",
+          "model.layers.4": "0",
+          "model.layers.5": "0",
+          "model.layers.6": "0",
+          "model.layers.7": "0",
+          "model.layers.8": "0",
+          "model.layers.9": "0",
+          "model.norm": "1",
+          "model.rotary_emb": "1"
+        },
+        "reused_all_cache": false
+      },
+      "hidden_dimension": 4096,
+      "layer_count": 37,
+      "max_token_count": 205,
+      "model_id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+      "notebook_version": "e10-ood-small-1",
+      "official_commit": "7e8839966750059b6b1d247a12ab56552c79b342",
+      "prepared_dataset_canonical_sha256": "7DBFA5662FC5DF3981B48E12124F6953F85902F04AD5723C93D636133F58B459",
+      "prepared_dataset_file_sha256": "005FFF6A03C21862AC78073865D83BBE99C92CA2CA9E12436187DDFD0C6F1438",
+      "problem_count": 10,
+      "representation": "input_last_token",
+      "schema_version": 1,
+      "weight_dtype": "float16"
+    },
+    "internals_zip": "aimo_e10_ood_small_internals.zip (not redistributed)",
+    "internals_zip_sha256": "32F005F730C0CEC0A75B3D5B0A8333899099E03CA8D8BD2D0284632FF51BCF69",
+    "v6_artifact_sha256": "7A4DF77D031530DC4998CBC4B6FFF2B8B717F99C7FA04E2646847C6A5BE3672B",
+    "v6_zip": "outputs/aimo-small-v6-fixed-layer-vote-20260910.zip",
+    "v6_zip_sha256": "C757708FCD5F079AF7A90EC30E91D45E5E9542FDBA32C125A862ACC68D933F3E"
+  },
+  "schema_version": 1,
+  "wilson_95": [
+    0.05668215145437519,
+    0.5098375284633583
+  ]
+}
