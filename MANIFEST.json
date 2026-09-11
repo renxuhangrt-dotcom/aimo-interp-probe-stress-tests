@@ -2,7 +2,7 @@
   "schema_version": 1,
   "release": "aimo-interp-probe-stress-tests-v0.1.0",
   "author": "XUHANG REN",
-  "file_count": 91,
+  "file_count": 92,
   "files": [
     {
       "path": ".gitattributes",
@@ -16,8 +16,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 381,
-      "sha256": "810EB5F16A0A9C2502580FEE8E407B60E6831D01CFC565449FE97A821EDFD05D"
+      "bytes": 470,
+      "sha256": "3071731D2D878633B6183FDD51BDA7964A385AB60F928BC58007834B87BFC8E6"
     },
     {
       "path": "LICENSE",
@@ -361,13 +361,13 @@
     },
     {
       "path": "outputs/technical_report/build_report_assets.py",
-      "bytes": 12970,
-      "sha256": "0D07D615B868CFF03DDB70E4A4CAC8F65E647F1FB830E04E22CF86CC62CB7A0C"
+      "bytes": 12975,
+      "sha256": "18A52A0202DC24CC0240379FB6C252FF24C9F350339FC5007E5CA2CA32A09F42"
     },
     {
       "path": "outputs/technical_report/build_two_page_pdf.py",
-      "bytes": 19246,
-      "sha256": "59481024690C3D02F189AFA58CDEF0C42ABFC5939C2D03308A51ED298C915810"
+      "bytes": 19606,
+      "sha256": "B7A78084F1829AAA5E23571AAE8D19FFB6455103E6A620524D0DCABCA4CB6AB2"
     },
     {
       "path": "outputs/technical_report/e10_summary.csv",
@@ -385,9 +385,14 @@
       "sha256": "CAF176BEA0C8856E73B600A4DA8DBF7CC7558E5AB5A79674E6543422BE7D72E3"
     },
     {
+      "path": "outputs/technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_submission.pdf",
+      "bytes": 63736,
+      "sha256": "299E9AD0375136B40D1D22A4193F98AABB2BB8146478B196102B825D28580778"
+    },
+    {
       "path": "outputs/technical_report/reproducibility_manifest.json",
-      "bytes": 5087,
-      "sha256": "19F07E2FAB27D245FD4DE84334C2D5AC27B8E5E86E2034F821C871A6E038A3F0"
+      "bytes": 5092,
+      "sha256": "9110F3ACCACC5F9F845C761D71532E94F8F8127A63FDB8D6A0F12C984AD04467"
     },
     {
       "path": "outputs/technical_report/results_overview.png",
@@ -416,23 +421,23 @@
     },
     {
       "path": "outputs/technical_report/TECHNICAL_REPORT_2PAGE_DRAFT.md",
-      "bytes": 6659,
-      "sha256": "5BA32DC918F1DDB294A8F09CDA3FAC56E8D566B2115D22CCE92ED9A52304C590"
+      "bytes": 6818,
+      "sha256": "7C2CA0DFC15557E80E2A67BEAA9802002D5B95B9B9EC4198ADC11377E5C4223F"
     },
     {
       "path": "outputs/technical_report/TECHNICAL_REPORT_DRAFT.md",
-      "bytes": 13749,
-      "sha256": "CE2D28ED61823E2FACDD4F20ABA7585CC9D6D30C61DD6E82116F9B02CDF1B645"
+      "bytes": 13946,
+      "sha256": "B55CF3ACF52EA2C614ED1312BD9D4FBEDAD99F11B9EFAD96E367CEC705988699"
     },
     {
       "path": "outputs/technical_report/test_report_integrity.py",
-      "bytes": 3051,
-      "sha256": "1911C11D3D05B4D7A9A69B841DF9941E633F9DE5E5F1644B0598F5A659D7213D"
+      "bytes": 3056,
+      "sha256": "3FBA2BFF4C8104E5DF1F3F1A9A1C3987A3F0B663DB3B7B4D015A44235E1C3B0E"
     },
     {
       "path": "README.md",
-      "bytes": 3041,
-      "sha256": "F1828C95C8D4B6CE16579EF2BCFCBE921E521D7EB7F5C3DA5005E0BAB30DC99D"
+      "bytes": 3132,
+      "sha256": "0F6FE70D5A0B49DDF81B0EB5720F98F307CE4672923DC0AC672B00CDED04F602"
     },
     {
       "path": "requirements-cpu.txt",

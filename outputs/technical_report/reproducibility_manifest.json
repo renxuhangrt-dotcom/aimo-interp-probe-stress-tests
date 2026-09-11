@@ -74,13 +74,13 @@
     },
     {
       "path": "technical_report/TECHNICAL_REPORT_DRAFT.md",
-      "bytes": 13749,
-      "sha256": "CE2D28ED61823E2FACDD4F20ABA7585CC9D6D30C61DD6E82116F9B02CDF1B645"
+      "bytes": 13946,
+      "sha256": "B55CF3ACF52EA2C614ED1312BD9D4FBEDAD99F11B9EFAD96E367CEC705988699"
     },
     {
       "path": "technical_report/TECHNICAL_REPORT_2PAGE_DRAFT.md",
-      "bytes": 6659,
-      "sha256": "5BA32DC918F1DDB294A8F09CDA3FAC56E8D566B2115D22CCE92ED9A52304C590"
+      "bytes": 6818,
+      "sha256": "7C2CA0DFC15557E80E2A67BEAA9802002D5B95B9B9EC4198ADC11377E5C4223F"
     },
     {
       "path": "technical_report/NEW_MODEL_GATE.md",
@@ -99,18 +99,18 @@
     },
     {
       "path": "technical_report/build_report_assets.py",
-      "bytes": 12970,
-      "sha256": "0D07D615B868CFF03DDB70E4A4CAC8F65E647F1FB830E04E22CF86CC62CB7A0C"
+      "bytes": 12975,
+      "sha256": "18A52A0202DC24CC0240379FB6C252FF24C9F350339FC5007E5CA2CA32A09F42"
     },
     {
       "path": "technical_report/build_two_page_pdf.py",
-      "bytes": 19246,
-      "sha256": "59481024690C3D02F189AFA58CDEF0C42ABFC5939C2D03308A51ED298C915810"
+      "bytes": 19606,
+      "sha256": "B7A78084F1829AAA5E23571AAE8D19FFB6455103E6A620524D0DCABCA4CB6AB2"
     },
     {
       "path": "technical_report/test_report_integrity.py",
-      "bytes": 3051,
-      "sha256": "1911C11D3D05B4D7A9A69B841DF9941E633F9DE5E5F1644B0598F5A659D7213D"
+      "bytes": 3056,
+      "sha256": "3FBA2BFF4C8104E5DF1F3F1A9A1C3987A3F0B663DB3B7B4D015A44235E1C3B0E"
     },
     {
       "path": "technical_report/results_summary.csv",
@@ -133,9 +133,9 @@
       "sha256": "B7F10CE3F5C7CACB6745EAE751837306E8E11E16E36BD81B2834740B898B7F22"
     },
     {
-      "path": "technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_draft.pdf",
-      "bytes": 63129,
-      "sha256": "CAF176BEA0C8856E73B600A4DA8DBF7CC7558E5AB5A79674E6543422BE7D72E3"
+      "path": "technical_report/pdf/When_Good_Probes_Fail_Xuhang_Ren_submission.pdf",
+      "bytes": 63736,
+      "sha256": "299E9AD0375136B40D1D22A4193F98AABB2BB8146478B196102B825D28580778"
     }
   ]
 }

@@ -4,6 +4,8 @@ Companion implementation and evidence for **When Good Probes Fail:
 Pre-registered Stress Tests of an Efficient Hidden-State Robustness Predictor
 for Mathematical Reasoning**, by XUHANG REN (Independent Researcher).
 
+Public repository: https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests
+
 This local release candidate documents the AIMO Interpretability Challenge
 2026 Small Models Track V6 method and the E6–E10 negative-result sequence.
 The scientific result is not that V6 is a generally reliable detector: V6

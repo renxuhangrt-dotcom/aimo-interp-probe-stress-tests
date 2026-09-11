@@ -270,7 +270,7 @@ def write_manifest() -> None:
             HERE / "e10_summary.csv",
             HERE / "results_overview.svg",
             HERE / "results_overview.png",
-            HERE / "pdf" / "When_Good_Probes_Fail_Xuhang_Ren_draft.pdf",
+            HERE / "pdf" / "When_Good_Probes_Fail_Xuhang_Ren_submission.pdf",
         ]
     )
     manifest = {

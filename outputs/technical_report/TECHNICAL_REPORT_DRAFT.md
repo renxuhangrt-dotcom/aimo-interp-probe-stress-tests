@@ -4,7 +4,7 @@
 **Working technical-report draft, version 0.1 (2026-09-10)**  
 **Author:** XUHANG REN · **Affiliation:** Independent Researcher  
 **Contact:** renxuhang2020@qq.com  
-**Code:** [public repository URL to be supplied before submission]
+**Code:** https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests
 
 ## Abstract
 
@@ -205,6 +205,10 @@ OOF predictions before packaging. E10 failed closed on revision drift, overlap,
 label-rule mismatch, incomplete extraction, non-finite states, or CPU/disk model
 offload. The artifact manifest and machine-readable result tables accompany the
 report.
+
+The public implementation, preregistrations, frozen result files, and exact V6
+submission bundle are available at
+https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests.
 
 The work incurred zero direct monetary compute cost: activation extraction used
 free Kaggle T4×2 sessions, while probe training, bootstrap evaluation, packaging,

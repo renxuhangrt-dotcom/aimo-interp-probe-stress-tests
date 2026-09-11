@@ -65,7 +65,7 @@ class ReportIntegrityTests(unittest.TestCase):
             "e10_summary.csv",
             "reproducibility_manifest.json",
             "build_two_page_pdf.py",
-            "pdf/When_Good_Probes_Fail_Xuhang_Ren_draft.pdf",
+            "pdf/When_Good_Probes_Fail_Xuhang_Ren_submission.pdf",
             "NEW_MODEL_GATE.md",
             "ROADMAP_ZH.md",
             "SUBMISSION_CHECKLIST.md",

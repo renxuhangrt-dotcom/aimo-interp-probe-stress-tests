@@ -27,7 +27,7 @@ from reportlab.platypus import (
 
 HERE = Path(__file__).resolve().parent
 OUTPUT_DIR = HERE / "pdf"
-OUTPUT_PDF = OUTPUT_DIR / "When_Good_Probes_Fail_Xuhang_Ren_draft.pdf"
+OUTPUT_PDF = OUTPUT_DIR / "When_Good_Probes_Fail_Xuhang_Ren_submission.pdf"
 FIGURE = HERE / "results_overview.png"
 
 PAGE_W, PAGE_H = letter
@@ -118,7 +118,7 @@ def first_page(canvas, doc) -> None:
     canvas.saveState()
     canvas.setTitle("When Good Probes Fail")
     canvas.setAuthor("XUHANG REN")
-    canvas.setSubject("AIMO Interpretability Challenge 2026 technical report draft")
+    canvas.setSubject("AIMO Interpretability Challenge 2026 technical report submission")
     canvas.setFillColor(colors.HexColor("#102a43"))
     canvas.setFont("Helvetica-Bold", 15.2)
     canvas.drawCentredString(PAGE_W / 2, PAGE_H - 34, "When Good Probes Fail")
@@ -139,7 +139,7 @@ def first_page(canvas, doc) -> None:
     canvas.drawCentredString(
         PAGE_W / 2,
         PAGE_H - 76,
-        "AIMO Interpretability Challenge 2026 - Small Models Track - draft v0.1",
+        "AIMO Interpretability Challenge 2026 - Small Models Track - submission v0.2",
     )
     canvas.setStrokeColor(colors.HexColor("#a9bfd5"))
     canvas.setLineWidth(0.6)
@@ -166,7 +166,7 @@ def second_page(canvas, doc) -> None:
 def draw_footer(canvas, page_number: int) -> None:
     canvas.setFillColor(colors.HexColor("#64748b"))
     canvas.setFont("Helvetica", 6.8)
-    canvas.drawString(LEFT, 16, "Technical report draft - evidence frozen 2026-09-10")
+    canvas.drawString(LEFT, 16, "Technical report submission v0.2 - evidence frozen 2026-09-10")
     canvas.drawRightString(PAGE_W - RIGHT, 16, str(page_number))
 
 
@@ -375,6 +375,13 @@ def build_story() -> list:
                 "and audit ran locally on CPU, incurring zero direct monetary compute cost. Any "
                 "future model must start from a distinct mechanistic hypothesis and an untouched "
                 "validation source; V6 private outcomes and E10 are frozen against tuning."
+            ),
+            p(
+                "Public code and frozen evidence: "
+                "<link href='https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests' "
+                "color='#163b65'>github.com/renxuhangrt-dotcom/<br/>"
+                "aimo-interp-probe-stress-tests</link>",
+                "small",
             ),
             h("10", "Conclusion"),
             p(

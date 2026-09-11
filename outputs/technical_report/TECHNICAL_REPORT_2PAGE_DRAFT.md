@@ -2,7 +2,7 @@
 
 **AIMO Interpretability Challenge 2026 — Small Models Track**  
 **Author:** XUHANG REN · **Affiliation:** Independent Researcher  
-**Contact:** renxuhang2020@qq.com · **Code:** [public URL]
+**Contact:** renxuhang2020@qq.com · **Code:** https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests
 
 ## Abstract
 
@@ -103,6 +103,8 @@ packaging, and audit ran locally on CPU, incurring zero direct monetary compute
 cost. Any future model must start from a distinct mechanistic hypothesis and an
 untouched validation source; V6 private outcomes and E10 are permanently frozen
 against tuning.
+
+Public code and frozen evidence: https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests
 
 ## References
 

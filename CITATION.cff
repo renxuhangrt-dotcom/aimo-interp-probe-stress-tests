@@ -4,6 +4,7 @@ title: 'When Good Probes Fail: Pre-registered Stress Tests of an Efficient Hidde
 version: 0.1.0
 date-released: 2026-09-11
 license: Apache-2.0
+repository-code: 'https://github.com/renxuhangrt-dotcom/aimo-interp-probe-stress-tests'
 authors:
   - family-names: Ren
     given-names: Xuhang
